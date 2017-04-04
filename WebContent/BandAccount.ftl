@@ -67,26 +67,13 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header style="min-height:200px;">
-        <center>
-                <form class="searchbar" style="padding-top:100px; background-color:transparent;">
-                <input type="search" name="search" placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
-                    <datalist id="searchchoices">
-                        <option value="Demo Band">
-                        <option value="Demo Venue">
-                        <option value="Demo Genre">
-                    </datalist>
-            </form>
-        </center>
-    </header>
-
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">The Project</h2>
+                    <h2 class="section-heading">${band_name}</h2>
                     <hr class="light">
-                    <p class="text-faded">This demo project text here.</p>
+                    <p class="text-faded">Check Us Out</p>
                 </div>
             </div>
         </div>
@@ -95,7 +82,8 @@
     <aside class="bg-dark">
         <div class="container text-center">
             <div>
-                <h2>Built for CS4300 Web Programming at the University of Georgia</h2>
+                <h2>Description</h2>
+                <p>${description}</p>
             </div>
         </div>
     </aside>
@@ -109,9 +97,25 @@
                 </div>
                 <center>
                     <table style="text-align:center; width:100%">
+                      <tr>
+                          <td>
+                              <p>Phone: ${telephone}</p>
+                          </td>
+                          <td>
+                              <p></p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p>Email: ${email}</p>
+                          </td>
+                          <td>
+                              <p></p>
+                          </td>
+                      </tr>
                         <tr>
                             <td>
-                                <p>Zack Filosi</p>
+                                <p>Twitter: ${twitter}</p>
                             </td>
                             <td>
                                 <p></p>
@@ -119,15 +123,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <p>Nate Harris</p>
-                            </td>
-                            <td>
-                                <p>ndh41265@uga.edu</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Jack</p>
+                                <p>Facebook: ${facebook}</p>
                             </td>
                             <td>
                                 <p></p>
@@ -135,7 +131,15 @@
                         </tr>
                         <tr>
                             <td>
-                                <p>Kay</p>
+                                <p>Soundcloud: ${soundcloud}</p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Youtube: ${youtube}</p>
                             </td>
                             <td>
                                 <p></p>
