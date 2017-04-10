@@ -18,7 +18,8 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -33,12 +34,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript" src="scripts/soundcloud.player.api.js"></script>
-    <script type="text/javascript">
-       soundcloud.addEventListener('onPlayerReady', function(player, data) {
-         player.api_play();
-       });
-    </script>
 </head>
 
 <body id="page-top">
@@ -88,71 +83,22 @@
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">EasyGig</h2>
-                    <hr class="light">
-                    <p class="text-faded">because some people don't know when to give up on pipe dreams</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="col-md-6 text-center">
+                    <h2 class="section-heading">Post To The Live Feed!</h2>
+                    <form action="" method="get">
 
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div>
-                <h2>Built for CS4300 Web Programming at the University of Georgia</h2>
-            </div>
-        </div>
-    </aside>
-
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Contact Info</h2>
-                    <hr class="primary">
+                    </form>
+                    <form action="./MakePost" id="theform" method="post"><br>
+                      <input style="display:none;"type="text" name="bandname" value="${bandname}">
+                      Title:  <input type="text" name="posttitle" placeholder="What will you call this post?" style="color:grey; width:50%; margin-bottom:10px;"><br>
+                      Content:  <textarea cols="50" rows="4" name="postcontent" placeholder = "What do you want to say?" form="theform"></textarea><br>
+                        <input type=submit value="Sign Up" class="btn btn-default sr-button"><br><br>
+                    </form>
                 </div>
-                <center>
-                    <table style="text-align:center; width:100%">
-                        <tr>
-                            <td>
-                                <p>Zack Filosi</p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Nate Harris</p>
-                            </td>
-                            <td>
-                                <p>ndh41265@uga.edu</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Jack</p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Kay</p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                        </tr>
-                    </table>
-                </center>
-                <object height="81" width="100%" id="myPlayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
-                  <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fmatas%2Fhobnotropic&enable_api=true&object_id=myPlayer"></param>
-                  <param name="allowscriptaccess" value="always"></param>
-                  <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fmatas%2Fhobnotropic&enable_api=true&object_id=myPlayer" type="application/x-shockwave-flash" width="100%" name="myPlayer"></embed>
-                </object>
+                <div class="col-md-6 text-center">
+                    <h2 class="section-heading">Already Have an Account?</h2>
+                    <p><a href="Login.html" class="text-faded">Click here to log in.</a></p>
+                </div>
             </div>
         </div>
     </section>

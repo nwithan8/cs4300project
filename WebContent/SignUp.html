@@ -86,16 +86,17 @@
                 <div class="col-md-6 text-center">
                     <h2 class="section-heading">Sign Up</h2>
                     <form action="" method="get">
-                        <input type="radio" name="bandorvenue" value="Artist/Band" style="color:grey"> Artist or Band
-                        <input type="radio" name="bandorvenue" value="Venue" style="color:grey; margin-left:30px;"> Venue
+
                     </form>
-                    <form action="" method="post"><br>
-                        <input type="text" name="firstname" placeholder="First Name" style="color:grey; width:50%; margin-bottom:10px;"><br>
-                        <input type="text" name="lastname" placeholder="Last Name" style="color:grey; width:50%; margin-bottom:10px;"><br>
-                        <input type="email" name="email" placeholder="Email Address" style="color:grey; width:50%; margin-bottom:10px;"><br>
+                    <form action="./SignUp" id="theform" method="post"><br>
+                        <input type="radio" name="bandorvenue" value="band" style="color:grey"> Artist or Band
+                        <input type="radio" name="bandorvenue" value="venue" style="color:grey; margin-left:30px;"> Venue <br>
+                        <input type="text" name="name" placeholder="Name of Band or Venue" style="color:grey; width:50%; margin-bottom:10px;"><br>
+                        <input type="text" name="email" placeholder="Email Address" style="color:grey; width:50%; margin-bottom:10px;"><br>
                         <input type="text" name="username" placeholder="Username" style="color:grey; width:50%; margin-bottom:10px;"><br>
                         <input type="text" name="password" placeholder="Password" style="color:grey; width:50%; margin-bottom:10px;"><br>
                         <input type="text" name="passwordcheck" placeholder="Confirm Password" style="color:grey; width:50%; margin-bottom:10px;"><br>
+                        <textarea cols="50" rows="4" name="description" placeholder = "describe your band or venue" form="theform"></textarea><br>
                         <input type=submit value="Sign Up" class="btn btn-default sr-button"><br><br>
                     </form>
                 </div>

@@ -85,22 +85,23 @@ $(window).load(function() {
 <div class="contentPost">
 <h2>Almost Ready!</h2>
 </div>
-<div style="display:none">
-  lol
+
+<div class="contentPost">
+<h2>Almost Ready!</h2>
 </div>
-                    <h2 class="section-heading">Create Your Profile</h2>
+
+                    <h2 class="section-heading" name ="name"value="${bandname}"><#if bandname??>${bandname}<#else>BandNameMissing</#if></h2>
                     <br>
-                    <form action="" method="post" style="font-size:18px; text-align:left;">
+                    <form id="postform" action="./CreateBand" method="post" style="font-size:18px; text-align:left;">
+                
+                        <input style="display:none;"type="text"name="bandname" value="${bandname}">
+                        <input style="display:none;"type="text"name="email" value="${email}">
+                        <input style="display:none;"type="text"name="description" value="${description}">
+
+
                        <center>
                         <table style="width:80%">
-                            <tr>
-                                <td>
-                                    <p>Artist/Band Name*</p>
-                                </td>
-                                <td>
-                                    <input type="text" name="bandname"  style="color:grey; width:70%; margin-bottom:10px;" required>
-                                </td>
-                           </tr>
+
                             <tr>
                                 <td>
                                     <p>Photo</p>
@@ -109,14 +110,7 @@ $(window).load(function() {
                                     <input type="file" name="bandphoto" style="width:70%; margin-bottom:10px;">
                                 </td>
                            </tr>
-                           <tr>
-                                <td>
-                                    <p>Brief Description*</p>
-                                </td>
-                                <td>
-                                    <input type="text" name="description" style="color:grey; width:70%; margin-bottom:10px;" required>
-                                </td>
-                           </tr>
+
                             <tr>
                                 <td>
                                     <p>Genre(s)*</p>
@@ -168,30 +162,16 @@ $(window).load(function() {
                                 <td>
                                 </td>
                            </tr>
-                           <tr>
-                                <td>
-                                    <p>Name*</p>
-                                </td>
-                                <td>
-                                    <input type="text" name="contactname" style="color:grey; width:70%; margin-bottom:10px;" required>
-                                </td>
-                           </tr>
+
                            <tr>
                                 <td>
                                     <p>Telephone*</p>
                                 </td>
                                 <td>
-                                    <input type="tel" name="phonenumber" style="color:grey; width:70%; margin-bottom:10px;" required>
+                                    <input type="text" name="phonenumber" style="color:grey; width:70%; margin-bottom:10px;" required>
                                 </td>
                            </tr>
-                           <tr>
-                                <td>
-                                    <p>Email</p>
-                                </td>
-                                <td>
-                                    <input type="email" name="email" style="color:grey; width:70%; margin-bottom:10px;">
-                                </td>
-                           </tr>
+
                            <tr>
                                 <td>
                                     <b>Social Media:</b>

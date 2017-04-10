@@ -87,22 +87,45 @@
                     <img src="https://placehold.it/600x400" class="center-block img-responsive">
                     <br>
                     <br>
-                    <h2 class="section-heading">Band Name</h2>
+                    <h2 class="section-heading"name="bandname">${band_name}</h2>
                     <hr class="light">
-                    <p>Description of the band here.</p>
+                    <p>${band_description}</p>
+                    <p>${band_email}</p>
+                    <p>${band_phone}</p>
                     <h4 style="font-style:oblique;"><a href="band.html" class="text-faded">Genre</a> <a href="band.html" class="text-faded">Genre</a> <a href="band.html" class="text-faded">Genre</a></h4>
                     <br>
                     <a href="http://facebook.com" class="btn btn-default btn-xl sr-button">Facebook</a>
                     <a href="http://twitter.com" class="btn btn-default btn-xl sr-button">Twitter</a>
                     <a href="http://soundcloud.com" class="btn btn-default btn-xl sr-button">SoundCloud</a>
                     <a href="http://youtube.com" class="btn btn-default btn-xl sr-button">YouTube</a>
+                    <a href="./LiveFeed.html" class="btn btn-default btn-xl sr-button">Live Feed</a>
+                    <a href="./LiveFeed.html" class="btn btn-default btn-xl sr-button">Live Feed</a>
+
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <form action="" method="post">
-                        <input type="submit" value="BOOK" class="btn btn-default btn-xl" style="background-color:#175411; color:white; font-size:60px; padding-top:none;">
+<script type="text/javascript">
+var i=0;
+  function showform(){
+    if(i==0){
+    document.getElementById("hiddenform").style="display:normal;";
+    i=1;
+  }else{
+    document.getElementById("hiddenform").style="display:none;";
+    i=0;
+  }
+  }
+</script>
+                    <button type="button"class= "btn btn-default btn-xl" style="background-color:#175411; color:white; font-size:60px; padding-top:none;" onclick="showform();"name="button">Post To Feed</button>
+
+                    <form name="postform" id="hiddenform" style="display:none;"class="" action="./PostToFeed" method="post">
+                      <br>
+                       <input style="display:none;"type="text" name="bandname" value="${band_name}"><br>
+                      Title: <input type="text" name="title" value=""><br><br>
+                      Content: <textarea form="postform" name="content" rows="8" cols="80"></textarea>
+                      <input type="submit" class= "btn btn-default btn-xl" name="" value="Submit Post">
                     </form>
                 </div>
             </div>
