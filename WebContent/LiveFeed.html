@@ -67,83 +67,237 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header style="min-height:200px;">
-        <center>
-                <form class="searchbar" style="padding-top:100px; background-color:transparent;">
-                <input type="search" name="search" placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
-                    <datalist id="searchchoices">
-                        <option value="Demo Band">
-                        <option value="Demo Venue">
-                        <option value="Demo Genre">
-                    </datalist>
-            </form>
-        </center>
-    </header>
 
-    <section class="bg-primary" id="about">
+    <section style="height:10%;"class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">The Project</h2>
+                    <h2 class="section-heading">Pixies</h2>
                     <hr class="light">
-                    <p class="text-faded">This demo project text here.</p>
+                    <p class="text-faded">Live Feed</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <aside class="bg-dark">
+    <aside style="height:10%;" class="bg-dark">
         <div class="container text-center">
             <div>
-                <h2>Built for CS4300 Web Programming at the University of Georgia</h2>
+                <h2 style="margin-top:-2%;">Athens, Georgia</h2>
             </div>
         </div>
     </aside>
+<style media="screen">
+
+  /* Insert CSS here */
+  .tweet{
+    background-color: #F05F40;
+    color:white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 30px
+  }
+  .name{
+    margin-top:0;
+    float: left;
+    background-color: black;
+    padding:5px;
+    border-radius: 30px
+  }
+  #tweet-1 .name::before {
+  content: "The Pixies";
+  }
+
+  #tweet-1 .handle::after {
+  content: "@pixies";
+  }
+
+  #tweet-1 .copy::before {
+  content: "Anyone have any open gigs for Thursday night?";
+  }
+
+  #tweet-1 .timestamp::after {
+  content: "1m";
+  }
+  #tweet-2 .name::before {
+  content: "Johann Sebastian Bach";
+  }
+
+  #tweet-2 .handle::after {
+  content: "@illbeBach";
+  }
+
+  #tweet-2 .copy::before {
+  content: "I've been dead for years";
+  }
+
+  #tweet-2 .timestamp::after {
+  content: "1m";
+  }
+
+
+  #tweet-3 .name::before {
+  content: "eminem";
+  }
+
+  #tweet-3 .handle::after {
+  content: "@eminem";
+  }
+
+  #tweet-3 .copy::before {
+  content: "who is tryna let me rap at their kids birthday party tuesday?";
+  }
+
+  #tweet-3 .timestamp::after {
+  content: "1m";
+  }
+
+
+
+
+  #tweet-4 .name::before {
+  content: "Atlanta Symphony Orchesta";
+  }
+
+  #tweet-4 .handle::after {
+  content: "@aso";
+  }
+
+  #tweet-4 .copy::before {
+  content: "we are all poor violinists, please hire us for a gig saturday";
+  }
+
+  #tweet-4 .timestamp::after {
+  content: "1m";
+  }
+
+
+
+
+
+  #tweet-5 .name::before {
+  content: "the beegees";
+  }
+
+  #tweet-5 .handle::after {
+  content: "@beegees";
+  }
+
+  #tweet-5 .copy::before {
+  content: "album sales are down, any open gigs on wednesday afternoon?";
+  }
+
+  #tweet-5 .timestamp::after {
+  content: "1m";
+  }
+
+
+
+
+  #tweet-6 .name::before {
+  content: "skrillex";
+  }
+
+  #tweet-6.handle::after {
+  content: "@skrill";
+  }
+
+  #tweet-6 .copy::before {
+  content: "I can blow your eardrums to pieces this monday evening, just hit me up";
+  }
+
+  #tweet-6 .timestamp::after {
+  content: "1m";
+  }
+  .verticalLine {
+  border-left: thick solid #ff0000;
+
+}
+</style>
 
     <section id="contact">
-        <div class="container">
+        <div  class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Contact Info</h2>
-                    <hr class="primary">
-                </div>
-                <center>
-                    <table style="text-align:center; width:100%">
-                        <tr>
-                            <td>
-                                <p>Zack Filosi</p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Nate Harris</p>
-                            </td>
-                            <td>
-                                <p>ndh41265@uga.edu</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Jack</p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Kay</p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                        </tr>
-                    </table>
-                </center>
+                    <h2 class="section-heading">Posts</h2>
 
+
+        <div class="tweet" id="tweet-1">
+        <div class="tweet-avatar-wrapper">
+          <div class="avatar"></div>
+        </div>
+        <div class="tweet-wrapper">
+          <span class="name"></span> <span class="handle"></span>
+          <span class="timestamp"></span>
+          <span class="copy"></span>
+        </div>
+      </div>
+      <br>
+      <div class="tweet" id="tweet-2">
+      <div class="tweet-avatar-wrapper">
+        <div class="avatar"></div>
+      </div>
+      <div class="tweet-wrapper">
+        <span class="name"></span> <span class="handle"></span>
+        <span class="timestamp"></span>
+        <span class="copy"></span>
+      </div>
+    </div>
+    <br>
+    <div class="tweet" id="tweet-3">
+    <div class="tweet-avatar-wrapper">
+      <div class="avatar"></div>
+    </div>
+    <div class="tweet-wrapper">
+      <span class="name"></span> <span class="handle"></span>
+      <span class="timestamp"></span>
+      <span class="copy"></span>
+    </div>
+  </div>
+  <br>
+  <div class="tweet" id="tweet-4">
+  <div class="tweet-avatar-wrapper">
+    <div class="avatar"></div>
+  </div>
+  <div class="tweet-wrapper">
+    <span class="name"></span> <span class="handle"></span>
+    <span class="timestamp"></span>
+    <span class="copy"></span>
+  </div>
+</div>
+<br>
+<div class="tweet" id="tweet-5">
+<div class="tweet-avatar-wrapper">
+  <div class="avatar"></div>
+</div>
+<div class="tweet-wrapper">
+  <span class="name"></span> <span class="handle"></span>
+  <span class="timestamp"></span>
+  <span class="copy"></span>
+</div>
+</div>
+<br>
+<div class="tweet" id="tweet-6">
+<div class="tweet-avatar-wrapper">
+  <div class="avatar"></div>
+</div>
+<div class="tweet-wrapper">
+  <span class="name"></span> <span class="handle"></span>
+  <span class="timestamp"></span>
+  <span class="copy"></span>
+</div>
+</div>
+<br>
+<div class="tweet" id="tweet-7">
+<div class="tweet-avatar-wrapper">
+  <div class="avatar"></div>
+</div>
+<div class="tweet-wrapper">
+  <span class="name"></span> <span class="handle"></span>
+  <span class="timestamp"></span>
+  <span class="copy"></span>
+</div>
+</div>
             </div>
         </div>
     </section>

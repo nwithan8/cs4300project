@@ -18,7 +18,8 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -33,12 +34,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript" src="scripts/soundcloud.player.api.js"></script>
-    <script type="text/javascript">
-       soundcloud.addEventListener('onPlayerReady', function(player, data) {
-         player.api_play();
-       });
-    </script>
 </head>
 
 <body id="page-top">
@@ -50,7 +45,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.html">EasyGig</a>
+                <a class="navbar-brand page-scroll" href="#page-top">EasyGig</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,26 +67,13 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header style="min-height:200px;">
-        <center>
-                <form class="searchbar" style="padding-top:100px; background-color:transparent;">
-                <input type="search" name="search" placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
-                    <datalist id="searchchoices">
-                        <option value="Demo Band">
-                        <option value="Demo Venue">
-                        <option value="Demo Genre">
-                    </datalist>
-            </form>
-        </center>
-    </header>
-
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">EasyGig</h2>
+                    <h2 class="section-heading">${band_name}</h2>
                     <hr class="light">
-                    <p class="text-faded">because some people don't know when to give up on pipe dreams</p>
+                    <p class="text-faded">Check Us Out</p>
                 </div>
             </div>
         </div>
@@ -100,7 +82,8 @@
     <aside class="bg-dark">
         <div class="container text-center">
             <div>
-                <h2>Built for CS4300 Web Programming at the University of Georgia</h2>
+                <h2>Description</h2>
+                <p>${description}</p>
             </div>
         </div>
     </aside>
@@ -114,9 +97,25 @@
                 </div>
                 <center>
                     <table style="text-align:center; width:100%">
+                      <tr>
+                          <td>
+                              <p>Phone: ${telephone}</p>
+                          </td>
+                          <td>
+                              <p></p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p>Email: ${email}</p>
+                          </td>
+                          <td>
+                              <p></p>
+                          </td>
+                      </tr>
                         <tr>
                             <td>
-                                <p>Zack Filosi</p>
+                                <p>Twitter: ${twitter}</p>
                             </td>
                             <td>
                                 <p></p>
@@ -124,15 +123,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <p>Nate Harris</p>
-                            </td>
-                            <td>
-                                <p>ndh41265@uga.edu</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Jack</p>
+                                <p>Facebook: ${facebook}</p>
                             </td>
                             <td>
                                 <p></p>
@@ -140,7 +131,15 @@
                         </tr>
                         <tr>
                             <td>
-                                <p>Kay</p>
+                                <p>Soundcloud: ${soundcloud}</p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Youtube: ${youtube}</p>
                             </td>
                             <td>
                                 <p></p>
@@ -148,11 +147,7 @@
                         </tr>
                     </table>
                 </center>
-                <object height="81" width="100%" id="myPlayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
-                  <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fmatas%2Fhobnotropic&enable_api=true&object_id=myPlayer"></param>
-                  <param name="allowscriptaccess" value="always"></param>
-                  <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fmatas%2Fhobnotropic&enable_api=true&object_id=myPlayer" type="application/x-shockwave-flash" width="100%" name="myPlayer"></embed>
-                </object>
+
             </div>
         </div>
     </section>

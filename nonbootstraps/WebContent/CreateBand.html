@@ -33,61 +33,32 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type = "text/javascript">
-$(window).load(function() {
-    setTimeout(function() {
-        $("#contentPost").show('fadeIn', {}, 500)
-    }, 2000);
-});
-</script>
 
 </head>
 
 <body id="page-top">
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="index.html">EasyGig</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="Login.html">Login</a>
-                    </li>
-                    <li>
-                        <a href="AboutUs.html">About</a>
-                    </li>
-                    <li>
-                        <a href="Help.html">Help</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+     <nav class="nav">
+         <div class="nav-header">
+        <span id="title">EASYGIG</span>
+        <ul class="menu">
+            <li class="bar">
+                <a href="Login.html">Login</a>
+            </li>
+            <li class="bar">
+                <a href="AboutUs.html">About</a>
+            </li>
+            <li class="bar">
+                <a href="Help.html">Help</a>
+            </li>
+        </ul>
+         </div>
     </nav>
 
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                <style>
-.contentPost { display:none;}
-</style>
-
-<div class="contentPost">
-<h2>Almost Ready!</h2>
-</div>
-<div style="display:none">
-  lol
-</div>
                     <h2 class="section-heading">Create Your Profile</h2>
                     <br>
                     <form action="" method="post" style="font-size:18px; text-align:left;">
@@ -98,7 +69,7 @@ $(window).load(function() {
                                     <p>Artist/Band Name*</p>
                                 </td>
                                 <td>
-                                    <input type="text" name="bandname"  style="color:grey; width:70%; margin-bottom:10px;" required>
+                                    <input type="text" name="bandname" style="color:grey; width:70%; margin-bottom:10px;" required>
                                 </td>
                            </tr>
                             <tr>
@@ -245,7 +216,7 @@ $(window).load(function() {
             </div>
         </div>
     </section>
-
+    
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 

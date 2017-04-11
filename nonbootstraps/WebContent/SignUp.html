@@ -38,35 +38,22 @@
 
 <body id="page-top">
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="index.html">EasyGig</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="Login.html">Login</a>
-                    </li>
-                    <li>
-                        <a href="AboutUs.html">About</a>
-                    </li>
-                    <li>
-                        <a href="Help.html">Help</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+    <nav class="nav">
+         <div class="nav-header">
+        <span id="title">SIGNUP</span>
+        <ul class="menu">
+            <li class="bar">
+                <a href="Login.html">Login</a>
+            </li>
+            <li class="bar">
+                <a href="AboutUs.html">About</a>
+            </li>
+            <li class="bar">
+                <a href="Help.html">Help</a>
+            </li>
+        </ul>
+         </div>
     </nav>
-
     <header style="min-height:200px;">
         <center>
                 <form class="searchbar" style="padding-top:100px; background-color:transparent;">
@@ -86,17 +73,16 @@
                 <div class="col-md-6 text-center">
                     <h2 class="section-heading">Sign Up</h2>
                     <form action="" method="get">
-
+                        <input type="radio" name="bandorvenue" value="Artist/Band" style="color:grey"> Artist or Band
+                        <input type="radio" name="bandorvenue" value="Venue" style="color:grey; margin-left:30px;"> Venue
                     </form>
-                    <form action="./SignUp" id="theform" method="post"><br>
-                        <input type="radio" name="bandorvenue" value="band" style="color:grey"> Artist or Band
-                        <input type="radio" name="bandorvenue" value="venue" style="color:grey; margin-left:30px;"> Venue <br>
-                        <input type="text" name="name" placeholder="Name of Band or Venue" style="color:grey; width:50%; margin-bottom:10px;"><br>
-                        <input type="text" name="email" placeholder="Email Address" style="color:grey; width:50%; margin-bottom:10px;"><br>
+                    <form action="" method="post"><br>
+                        <input type="text" name="firstname" placeholder="First Name" style="color:grey; width:50%; margin-bottom:10px;"><br>
+                        <input type="text" name="lastname" placeholder="Last Name" style="color:grey; width:50%; margin-bottom:10px;"><br>
+                        <input type="email" name="email" placeholder="Email Address" style="color:grey; width:50%; margin-bottom:10px;"><br>
                         <input type="text" name="username" placeholder="Username" style="color:grey; width:50%; margin-bottom:10px;"><br>
                         <input type="text" name="password" placeholder="Password" style="color:grey; width:50%; margin-bottom:10px;"><br>
                         <input type="text" name="passwordcheck" placeholder="Confirm Password" style="color:grey; width:50%; margin-bottom:10px;"><br>
-                        <textarea cols="50" rows="4" name="description" placeholder = "describe your band or venue" form="theform"></textarea><br>
                         <input type=submit value="Sign Up" class="btn btn-default sr-button"><br><br>
                     </form>
                 </div>

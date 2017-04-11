@@ -18,7 +18,8 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -33,54 +34,31 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript" src="scripts/soundcloud.player.api.js"></script>
-    <script type="text/javascript">
-       soundcloud.addEventListener('onPlayerReady', function(player, data) {
-         player.api_play();
-       });
-    </script>
 </head>
 
 <body id="page-top">
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="index.html">EasyGig</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="Login.html">Login</a>
-                    </li>
-                    <li>
-                        <a href="AboutUs.html">About</a>
-                    </li>
-                    <li>
-                        <a href="Help.html">Help</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+     <nav class="nav">
+         <div class="nav-header">
+        <span id="title">VENUE</span>
+        <ul class="menu">
+            <li class="bar">
+                <a href="Login.html">Login</a>
+            </li>
+            <li class="bar">
+                <a href="AboutUs.html">About</a>
+            </li>
+            <li class="bar">
+                <a href="Help.html">Help</a>
+            </li>
+        </ul>
+         </div>
     </nav>
 
     <header style="min-height:200px;">
         <center>
                 <form class="searchbar" style="padding-top:100px; background-color:transparent;">
                 <input type="search" name="search" placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
-                    <datalist id="searchchoices">
-                        <option value="Demo Band">
-                        <option value="Demo Venue">
-                        <option value="Demo Genre">
-                    </datalist>
             </form>
         </center>
     </header>
@@ -89,9 +67,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">EasyGig</h2>
+                    <h2 class="section-heading">The Project</h2>
                     <hr class="light">
-                    <p class="text-faded">because some people don't know when to give up on pipe dreams</p>
+                    <p class="text-faded">This demo project text here.</p>
                 </div>
             </div>
         </div>
@@ -105,21 +83,21 @@
         </div>
     </aside>
 
-    <section id="contact">
+      <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Contact Info</h2>
+                    <h2 class="section-heading" id="contactinfo">Contact Info</h2>
                     <hr class="primary">
                 </div>
                 <center>
-                    <table style="text-align:center; width:100%">
+                    <table style="text-align:center; width:100%" class="tbcontact">
                         <tr>
                             <td>
                                 <p>Zack Filosi</p>
                             </td>
                             <td>
-                                <p></p>
+                                <p>cfilosi@uga.edu</p>
                             </td>
                         </tr>
                         <tr>
@@ -132,27 +110,23 @@
                         </tr>
                         <tr>
                             <td>
-                                <p>Jack</p>
+                                <p>John Peeples</p>
                             </td>
                             <td>
-                                <p></p>
+                                <p>john.peeples25@uga.edu</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p>Kay</p>
+                                <p>Khushboo Patel</p>
                             </td>
                             <td>
-                                <p></p>
+                                <p>kp10774@uga.edu</p>
                             </td>
                         </tr>
                     </table>
                 </center>
-                <object height="81" width="100%" id="myPlayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
-                  <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fmatas%2Fhobnotropic&enable_api=true&object_id=myPlayer"></param>
-                  <param name="allowscriptaccess" value="always"></param>
-                  <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fmatas%2Fhobnotropic&enable_api=true&object_id=myPlayer" type="application/x-shockwave-flash" width="100%" name="myPlayer"></embed>
-                </object>
+
             </div>
         </div>
     </section>
