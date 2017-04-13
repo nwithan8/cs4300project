@@ -19,8 +19,7 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -37,7 +36,7 @@
 
 </head>
 
-<body id="page-top"onload="movethem()" style="background-color:none;">
+<body id="page-top" onload="movethem()" style="background-color:none;">
     <style>
         
         #b1,
@@ -108,47 +107,40 @@
         }
     </style>
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="index.html">EasyGig</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="Login.html">Login</a>
-                    </li>
-                    <li>
-                        <a href="AboutUs.html">About</a>
-                    </li>
-                    <li>
-                        <a href="Help.html">Help</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+    <nav class="nav">
+        <div class="nav-header">
+            <span id="title" style="text-decoration:none;">WELCOME</span>
+            <ul class="menu">
+                <li class="bar">
+                    <a href="Login.html" style="color:white;">Login</a>
+                </li>
+                <li class="bar">
+                    <a href="AboutUs.html" style="color:white;">About</a>
+                </li>
+                <li class="bar">
+                    <a href="Help.html" style="color:white;">Help</a>
+                </li>
+            </ul>
         </div>
-        <!-- /.container-fluid -->
     </nav>
 
-    <header style="height:250px;">
-        <center>
-                <form class="searchbar" style="padding-top:100px; background-color:transparent; z-index:1">
-                <input type="search" name="search" placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
+    <header style="height:100%;">
+        <div class="header-content" style="height:100%;">
+            <h1 id="homeHeading" style="z-index:1">A Band + A Venue</h1>
+            <br>
+            <form class="searchbar" style="z-index:1">
+                <form class="searchbar" style="padding-top:100px; background-color:transparent; color: #557c33">
+                    <input list="searchchoices" type="search" name="search" placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
                     <datalist id="searchchoices">
                         <option value="Demo Band">
-                        <option value="Demo Venue">
-                        <option value="Demo Genre">
+                            <option value="Demo Venue">
+                                <option value="Demo Genre">
                     </datalist>
+                </form>
+                <hr>
+                <h3>EasyGig is a platform for connecting bands and venues.</h3>
             </form>
-        </center>
-        <div id="bars">
+            <div id="bars">
                 <table id="bartable">
                     <tr>
                         <td>
@@ -245,75 +237,8 @@
                 </table>
             </div>
             <div id="background"></div>
+        </div>
     </header>
-
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">The Project</h2>
-                    <hr class="light">
-                    <p class="text-faded">This demo project text here.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div>
-                <h2>Built for CS4300 Web Programming at the University of Georgia</h2>
-            </div>
-        </div>
-    </aside>
-
-      <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading" id="contactinfo">Contact Info</h2>
-                    <hr class="primary">
-                </div>
-                <center>
-                    <table style="text-align:center; width:100%" class="tbcontact">
-                        <tr>
-                            <td>
-                                <p>Zack Filosi</p>
-                            </td>
-                            <td>
-                                <p>cfilosi@uga.edu</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Nate Harris</p>
-                            </td>
-                            <td>
-                                <p>ndh41265@uga.edu</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>John Peeples</p>
-                            </td>
-                            <td>
-                                <p>john.peeples25@uga.edu</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Khushboo Patel</p>
-                            </td>
-                            <td>
-                                <p>kp10774@uga.edu</p>
-                            </td>
-                        </tr>
-                    </table>
-                </center>
-
-            </div>
-        </div>
-    </section>
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
