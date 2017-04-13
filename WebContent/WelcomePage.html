@@ -38,6 +38,9 @@
 
 <body id="page-top" onload="movethem()" style="background-color:none;">
     <style>
+        #searchradiobuttons {
+            display: none;
+        }
         
         #b1,
         #b3,
@@ -109,7 +112,7 @@
 
     <nav class="nav">
         <div class="nav-header">
-            <span id="title" style="text-decoration:none;">WELCOME</span>
+            <span id="title" style="text-decoration:none;">EasyGig</span>
             <ul class="menu">
                 <li class="bar">
                     <a href="Login.html" style="color:white;">Login</a>
@@ -130,12 +133,18 @@
             <br>
             <form class="searchbar" style="z-index:1">
                 <form class="searchbar" style="padding-top:100px; background-color:transparent; color: #557c33">
-                    <input list="searchchoices" type="search" name="search" placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
+                    <input list="searchchoices" type="search" name="search" onclick=displaysearchtypes() placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
                     <datalist id="searchchoices">
                         <option value="Demo Band">
-                            <option value="Demo Venue">
-                                <option value="Demo Genre">
+                        <option value="Demo Venue">
+                        <option value="Demo Genre">
                     </datalist>
+                    <br>
+                    <div id="searchradiobuttons">
+                        <input type="radio" name="searchtype" value="band"> Band
+                        <input type="radio" name="searchtype" value="venue"> Venue
+                        <input type="radio" name="searchtype" value="genre"> Genre
+                    </div>
                 </form>
                 <hr>
                 <h3>EasyGig is a platform for connecting bands and venues.</h3>

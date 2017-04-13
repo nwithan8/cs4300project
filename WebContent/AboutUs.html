@@ -39,6 +39,9 @@
 
 <body id="page-top"onload="movethem()" style="background-color:none;">
     <style>
+        #searchradiobuttons {
+            display: none;
+        }
         
         #b1,
         #b3,
@@ -109,32 +112,38 @@
     </style>
 
      <nav class="nav">
-         <div class="nav-header">
-        <span id="title">LOGIN</span>
-        <ul class="menu">
-            <li class="bar">
-                <a href="Login.html">Login</a>
-            </li>
-            <li class="bar">
-                <a href="AboutUs.html">About</a>
-            </li>
-            <li class="bar">
-                <a href="Help.html">Help</a>
-            </li>
-        </ul>
-         </div>
+        <div class="nav-header">
+            <span id="title" style="text-decoration:none;">EasyGig</span>
+            <ul class="menu">
+                <li class="bar">
+                    <a href="Login.html" style="color:white;">Login</a>
+                </li>
+                <li class="bar">
+                    <a href="AboutUs.html" style="color:white;">About</a>
+                </li>
+                <li class="bar">
+                    <a href="Help.html" style="color:white;">Help</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <header style="height:250px;">
         <center>
-                <form class="searchbar" style="padding-top:100px; background-color:transparent; z-index:1">
-                <input type="search" name="search" placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
+                <form class="searchbar" style="padding-top:100px; background-color:transparent; color: #557c33">
+                    <input list="searchchoices" type="search" name="search" onclick=displaysearchtypes() placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
                     <datalist id="searchchoices">
                         <option value="Demo Band">
                         <option value="Demo Venue">
                         <option value="Demo Genre">
                     </datalist>
-            </form>
+                    <br>
+                    <div id="searchradiobuttons">
+                        <input type="radio" name="searchtype" value="band"> Band
+                        <input type="radio" name="searchtype" value="venue"> Venue
+                        <input type="radio" name="searchtype" value="genre"> Genre
+                    </div>
+                </form>
         </center>
         <div id="bars">
                 <table id="bartable">
