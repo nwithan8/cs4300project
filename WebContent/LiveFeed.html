@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-
+    <link href="css/creative.min.css" rel="stylesheet">
+    <script src="js/animate.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,268 +37,277 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top"onload="movethem()" style="background-color:none;">
+    <style>
+        #searchradiobuttons {
+            display: none;
+        }
+        
+        #b1,
+        #b3,
+        #b5,
+        #b7,
+        #b9,
+        #b11,
+        #b13,
+        #b15,
+        #b17,
+        #b19,
+        #b21,
+        #b23,
+        #b25,
+        #b27,
+        #b29{
+            background-color: #132e1d;
+            opacity: .5;
+        }
+        
+        #b2,
+        #b4,
+        #b6,
+        #b8,
+        #b10,
+        #b12,
+        #b14,
+        #b16,
+        #b18,
+        #b20,
+        #b22,
+        #b24,
+        #b26,
+        #b28,
+        #b30{
+            background-color: #224730;
+            opacity: .5;
+        }
+        
+        #bars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+        }
+        
+        #bartable {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #bartable td {
+            padding: 1px;
+            vertical-align: bottom;
+        }
+        
+        #background {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            background-image: url(img/header2small.jpg)
+        }
+    </style>
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="index.html">EasyGig</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="Login.html">Login</a>
-                    </li>
-                    <li>
-                        <a href="AboutUs.html">About</a>
-                    </li>
-                    <li>
-                        <a href="Help.html">Help</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+    <nav class="nav">
+        <div class="nav-header">
+            <span id="title" style="text-decoration:none;">EasyGig</span>
+            <ul class="menu">
+                <li class="bar">
+                    <a href="Login.html" style="color:white;">Login</a>
+                </li>
+                <li class="bar">
+                    <a href="AboutUs.html" style="color:white;">About</a>
+                </li>
+                <li class="bar">
+                    <a href="Help.html" style="color:white;">Help</a>
+                </li>
+            </ul>
         </div>
-        <!-- /.container-fluid -->
     </nav>
 
+    <header style="height:250px;">
+        <center>
+                <form class="searchbar" style="padding-top:100px; background-color:transparent; color: #557c33">
+                    <input list="searchchoices" type="search" name="search" onclick=displaysearchtypes() placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
+                    <datalist id="searchchoices">
+                        <option value="Demo Band">
+                        <option value="Demo Venue">
+                        <option value="Demo Genre">
+                    </datalist>
+                    <br>
+                    <div id="searchradiobuttons">
+                        <input type="radio" name="searchtype" value="band"> Band
+                        <input type="radio" name="searchtype" value="venue"> Venue
+                        <input type="radio" name="searchtype" value="genre"> Genre
+                    </div>
+                </form>
+        </center>
+        <div id="bars">
+                <table id="bartable">
+                    <tr>
+                        <td>
+                            <div id="b1"></div>
+                        </td>
+                        <td>
+                            <div id="b2"></div>
+                        </td>
+                        <td>
+                            <div id="b3"></div>
+                        </td>
+                        <td>
+                            <div id="b4"></div>
+                        </td>
+                        <td>
+                            <div id="b5"></div>
+                        </td>
+                        <td>
+                            <div id="b6"></div>
+                        </td>
+                        <td>
+                            <div id="b7"></div>
+                        </td>
+                        <td>
+                            <div id="b8"></div>
+                        </td>
+                        <td>
+                            <div id="b9"></div>
+                        </td>
+                        <td>
+                            <div id="b10"></div>
+                        </td>
+                        <td>
+                            <div id="b11"></div>
+                        </td>
+                        <td>
+                            <div id="b12"></div>
+                        </td>
+                        <td>
+                            <div id="b13"></div>
+                        </td>
+                        <td>
+                            <div id="b14"></div>
+                        </td>
+                        <td>
+                            <div id="b15"></div>
+                        </td>
+                        <td>
+                            <div id="b16"></div>
+                        </td>
+                        <td>
+                            <div id="b17"></div>
+                        </td>
+                        <td>
+                            <div id="b18"></div>
+                        </td>
+                        <td>
+                            <div id="b19"></div>
+                        </td>
+                        <td>
+                            <div id="b20"></div>
+                        </td>
+                        <td>
+                            <div id="b21"></div>
+                        </td>
+                        <td>
+                            <div id="b22"></div>
+                        </td>
+                        <td>
+                            <div id="b23"></div>
+                        </td>
+                        <td>
+                            <div id="b24"></div>
+                        </td>
+                        <td>
+                            <div id="b25"></div>
+                        </td>
+                        <td>
+                            <div id="b26"></div>
+                        </td>
+                        <td>
+                            <div id="b27"></div>
+                        </td>
+                        <td>
+                            <div id="b28"></div>
+                        </td>
+                        <td>
+                            <div id="b29"></div>
+                        </td>
+                        <td>
+                            <div id="b30"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="background"></div>
+    </header>
 
-    <section style="height:10%;"class="bg-primary" id="about">
+    <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Pixies</h2>
+                    <h2 class="section-heading">The Project</h2>
                     <hr class="light">
-                    <p class="text-faded">Live Feed</p>
+                    <p class="text-faded">This demo project text here.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <aside style="height:10%;" class="bg-dark">
+    <aside class="bg-dark">
         <div class="container text-center">
             <div>
-                <h2 style="margin-top:-2%;">Athens, Georgia</h2>
+                <h2>Built for CS4300 Web Programming at the University of Georgia</h2>
             </div>
         </div>
     </aside>
-<style media="screen">
 
-  /* Insert CSS here */
-  .tweet{
-    background-color: #F05F40;
-    color:white;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 30px
-  }
-  .name{
-    margin-top:0;
-    float: left;
-    background-color: black;
-    padding:5px;
-    border-radius: 30px
-  }
-  #tweet-1 .name::before {
-  content: "The Pixies";
-  }
-
-  #tweet-1 .handle::after {
-  content: "@pixies";
-  }
-
-  #tweet-1 .copy::before {
-  content: "Anyone have any open gigs for Thursday night?";
-  }
-
-  #tweet-1 .timestamp::after {
-  content: "1m";
-  }
-  #tweet-2 .name::before {
-  content: "Johann Sebastian Bach";
-  }
-
-  #tweet-2 .handle::after {
-  content: "@illbeBach";
-  }
-
-  #tweet-2 .copy::before {
-  content: "I've been dead for years";
-  }
-
-  #tweet-2 .timestamp::after {
-  content: "1m";
-  }
-
-
-  #tweet-3 .name::before {
-  content: "eminem";
-  }
-
-  #tweet-3 .handle::after {
-  content: "@eminem";
-  }
-
-  #tweet-3 .copy::before {
-  content: "who is tryna let me rap at their kids birthday party tuesday?";
-  }
-
-  #tweet-3 .timestamp::after {
-  content: "1m";
-  }
-
-
-
-
-  #tweet-4 .name::before {
-  content: "Atlanta Symphony Orchesta";
-  }
-
-  #tweet-4 .handle::after {
-  content: "@aso";
-  }
-
-  #tweet-4 .copy::before {
-  content: "we are all poor violinists, please hire us for a gig saturday";
-  }
-
-  #tweet-4 .timestamp::after {
-  content: "1m";
-  }
-
-
-
-
-
-  #tweet-5 .name::before {
-  content: "the beegees";
-  }
-
-  #tweet-5 .handle::after {
-  content: "@beegees";
-  }
-
-  #tweet-5 .copy::before {
-  content: "album sales are down, any open gigs on wednesday afternoon?";
-  }
-
-  #tweet-5 .timestamp::after {
-  content: "1m";
-  }
-
-
-
-
-  #tweet-6 .name::before {
-  content: "skrillex";
-  }
-
-  #tweet-6.handle::after {
-  content: "@skrill";
-  }
-
-  #tweet-6 .copy::before {
-  content: "I can blow your eardrums to pieces this monday evening, just hit me up";
-  }
-
-  #tweet-6 .timestamp::after {
-  content: "1m";
-  }
-  .verticalLine {
-  border-left: thick solid #ff0000;
-
-}
-</style>
-
-    <section id="contact">
-        <div  class="container">
+      <section id="contact">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Posts</h2>
+                    <h2 class="section-heading" id="contactinfo">Contact Info</h2>
+                    <hr class="primary">
+                </div>
+                <center>
+                    <table style="text-align:center; width:100%" class="tbcontact">
+                        <tr>
+                            <td>
+                                <p>Zack Filosi</p>
+                            </td>
+                            <td>
+                                <p>cfilosi@uga.edu</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Nate Harris</p>
+                            </td>
+                            <td>
+                                <p>ndh41265@uga.edu</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>John Peeples</p>
+                            </td>
+                            <td>
+                                <p>john.peeples25@uga.edu</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Khushboo Patel</p>
+                            </td>
+                            <td>
+                                <p>kp10774@uga.edu</p>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
 
-
-        <div class="tweet" id="tweet-1">
-        <div class="tweet-avatar-wrapper">
-          <div class="avatar"></div>
-        </div>
-        <div class="tweet-wrapper">
-          <span class="name"></span> <span class="handle"></span>
-          <span class="timestamp"></span>
-          <span class="copy"></span>
-        </div>
-      </div>
-      <br>
-      <div class="tweet" id="tweet-2">
-      <div class="tweet-avatar-wrapper">
-        <div class="avatar"></div>
-      </div>
-      <div class="tweet-wrapper">
-        <span class="name"></span> <span class="handle"></span>
-        <span class="timestamp"></span>
-        <span class="copy"></span>
-      </div>
-    </div>
-    <br>
-    <div class="tweet" id="tweet-3">
-    <div class="tweet-avatar-wrapper">
-      <div class="avatar"></div>
-    </div>
-    <div class="tweet-wrapper">
-      <span class="name"></span> <span class="handle"></span>
-      <span class="timestamp"></span>
-      <span class="copy"></span>
-    </div>
-  </div>
-  <br>
-  <div class="tweet" id="tweet-4">
-  <div class="tweet-avatar-wrapper">
-    <div class="avatar"></div>
-  </div>
-  <div class="tweet-wrapper">
-    <span class="name"></span> <span class="handle"></span>
-    <span class="timestamp"></span>
-    <span class="copy"></span>
-  </div>
-</div>
-<br>
-<div class="tweet" id="tweet-5">
-<div class="tweet-avatar-wrapper">
-  <div class="avatar"></div>
-</div>
-<div class="tweet-wrapper">
-  <span class="name"></span> <span class="handle"></span>
-  <span class="timestamp"></span>
-  <span class="copy"></span>
-</div>
-</div>
-<br>
-<div class="tweet" id="tweet-6">
-<div class="tweet-avatar-wrapper">
-  <div class="avatar"></div>
-</div>
-<div class="tweet-wrapper">
-  <span class="name"></span> <span class="handle"></span>
-  <span class="timestamp"></span>
-  <span class="copy"></span>
-</div>
-</div>
-<br>
-<div class="tweet" id="tweet-7">
-<div class="tweet-avatar-wrapper">
-  <div class="avatar"></div>
-</div>
-<div class="tweet-wrapper">
-  <span class="name"></span> <span class="handle"></span>
-  <span class="timestamp"></span>
-  <span class="copy"></span>
-</div>
-</div>
             </div>
         </div>
     </section>

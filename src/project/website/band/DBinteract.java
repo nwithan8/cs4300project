@@ -106,5 +106,4 @@ public class DBinteract{
 		return z;
 	}
 	
-	public static int createBandPost(String)
 }

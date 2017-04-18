@@ -33,7 +33,6 @@ public class PostToFeed extends HttpServlet {
 		
 		DBinteract database = new DBinteract();
 		
-		database
 		
 		
 	}
