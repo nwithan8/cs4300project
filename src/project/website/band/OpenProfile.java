@@ -45,6 +45,10 @@ public class OpenProfile extends HttpServlet {
 		request.setAttribute("band_email", theband.getEmail());
 		request.setAttribute("band_phone", theband.getTelephone());
 		request.setAttribute("band_description", theband.getDescription());
+		request.setAttribute("facebook", theband.getFacebook());
+		request.setAttribute("twitter", theband.getTwitter());
+		request.setAttribute("youtube", theband.getYoutube());
+		request.setAttribute("soundcloud", theband.getSoundcloud());
 		request.getRequestDispatcher("./Band.ftl").forward(request, response);//forwards the request
 	}
 

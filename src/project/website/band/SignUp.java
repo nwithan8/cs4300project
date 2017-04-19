@@ -42,7 +42,7 @@ public class SignUp extends HttpServlet {
 		DBinteract database = new DBinteract();
 		String choice = request.getParameter("bandorvenue");
 		Boolean thechoice;
-		if(choice.equals("band")){thechoice=false;}else{thechoice=true;}
+		if(choice.equals("band")){thechoice=false;
 		String username = request.getParameter("username");
 		String password  = request.getParameter("password");
 		String email = request.getParameter("email");
@@ -59,6 +59,27 @@ public class SignUp extends HttpServlet {
 		request.setAttribute("bandname", bandname);
 
 		request.getRequestDispatcher("./CreateBand.ftl").forward(request, response);//forwards the request
+		
+		
+		}else{thechoice=true;
+		String username = request.getParameter("username");
+		String password  = request.getParameter("password");
+		String email = request.getParameter("email");
+		String bandname = request.getParameter("name");
+		String lastname = request.getParameter("lastname");
+		String description = request.getParameter("description");
+		int id = database.createAccount(thechoice, username, password, bandname, description, email);
+
+		
+        request.setAttribute("id", id);
+		request.setAttribute("description",description );
+		request.setAttribute("email", email);
+		request.setAttribute("name", bandname);
+		request.setAttribute("venuename", bandname);
+
+		request.getRequestDispatcher("./CreateVenue.ftl").forward(request, response);//forwards the request
+		
+		}
 	}
 
 	/**

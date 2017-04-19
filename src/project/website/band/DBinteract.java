@@ -108,6 +108,12 @@ public class DBinteract{
 		
 		return z;
 	}
+	public static int fillVenueInfo(String Venuename, String facebook, String twitter,String youtube, String telephone){
+		String query = "UPDATE venue SET facebook ='"+facebook+"',twitter='"+twitter+"', youtube='"+youtube+"',telephone='"+telephone+"' WHERE venue_name='"+Venuename+"';";
+		int z =  DatabaseAccessInterface.create(query);
+		
+		return z;
+	}
 	
 	public static int getMaxEventId(){
 		String query = "select MAX(id) from events ";

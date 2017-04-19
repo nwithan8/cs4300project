@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class CreateBand
+ * Servlet implementation class CreateVenue
  */
-@WebServlet("/CreateBand")
-public class CreateBand extends HttpServlet {
+@WebServlet("/CreateVenue")
+public class CreateVenue extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CreateBand() {
+    public CreateVenue() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,32 +27,29 @@ public class CreateBand extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
 		DBinteract database = new DBinteract();
-		String bandname = request.getParameter("bandname");
+		String venuename = request.getParameter("venuename");
 		String description = request.getParameter("description");
 		String facebook  = request.getParameter("facebook");
 		String email = request.getParameter("email");
 		String twitter = request.getParameter("twitter");
-		String soundcloud = request.getParameter("soundcloud");
 		String youtube = request.getParameter("youtube");
 		String telephone = request.getParameter("phonenumber");
-		String[]genres = request.getParameterValues("genres");
-		DBinteract.fillBandInfo( bandname, facebook,  twitter,  soundcloud, youtube,  telephone);
+		DBinteract.fillVenueInfo( venuename, facebook,  twitter, youtube,  telephone);
 		
 	
         
-		request.setAttribute("band_name", bandname );
-		request.setAttribute("band_email", email);
-		request.setAttribute("band_phone", telephone);
-		request.setAttribute("band_description", description);
+		request.setAttribute("venue_name", venuename );
+		request.setAttribute("venue_email", email);
+		request.setAttribute("venue_phone", telephone);
+		request.setAttribute("venue_description", description);
 		request.setAttribute("facebook", facebook);
 		request.setAttribute("twitter", twitter);
 		request.setAttribute("youtube", youtube);
-		request.setAttribute("soundcloud", soundcloud);
-		request.getRequestDispatcher("./Band.ftl").forward(request, response);//forwards the request
-	
-	}
 
+		request.getRequestDispatcher("./Venue.ftl").forward(request, response);//forwards the request	}
+	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

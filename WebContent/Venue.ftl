@@ -102,19 +102,17 @@ if (typeof(Storage) !== "undefined") {
     // Retrieve
    document.getElementById("id").innerHTML += id;
     document.getElementById("name").innerHTML += name;
-} 
+}
 
 </script>
-                    <h2 class="section-heading"name="bandname">${band_name}</h2>
+                    <h2 class="section-heading"name="bandname">${venue_name}</h2>
                     <hr class="light">
-                    <p>${band_description}</p>
-                    <p>${band_email}</p>
-                    <p>${band_phone}</p>
-                    <h4 style="font-style:oblique;"><a href="band.html" class="text-faded">Genre</a> <a href="band.html" class="text-faded">Genre</a> <a href="band.html" class="text-faded">Genre</a></h4>
+                    <p>${venue_description}</p>
+                    <p>${venue_email}</p>
+                    <p>${venue_phone}</p>
                     <br>
                     <a href="${facebook}" class="btn btn-default btn-xl sr-button">Facebook</a>
                     <a href="${twitter}" class="btn btn-default btn-xl sr-button">Twitter</a>
-                    <a href="${soundcloud}" class="btn btn-default btn-xl sr-button">SoundCloud</a>
                     <a href="${youtube}" class="btn btn-default btn-xl sr-button">YouTube</a>
                     <a href="./LiveFeed.html" class="btn btn-default btn-xl sr-button">Live Feed</a>
 
@@ -135,11 +133,11 @@ var i=0;
   }
   }
 </script>
-                    <button type="button"class= "btn btn-default btn-xl" style="background-color:#175411; color:white; font-size:60px; padding-top:none;" onclick="showform();"name="button">Post To Feed</button>
+                    <button type="button"class= "btn btn-default btn-xl" style="background-color:#175411; color:white; font-size:60px; padding-top:none;" onclick="showform();"name="button">Create An Event</button>
 
                     <form name="postform" id="hiddenform" style="display:none;"class="" action="./PostToFeed" method="post">
                       <br>
-                       <input style="display:none;"type="text" name="bandname" value="${band_name}"><br>
+                       <input style="display:none;"type="text" name="bandname" value=""><br>
                       Title: <input type="text" name="title" value=""><br><br>
                       Content: <textarea form="postform" name="content" rows="8" cols="80"></textarea>
                       <input type="submit" class= "btn btn-default btn-xl" name="" value="Submit Post">
