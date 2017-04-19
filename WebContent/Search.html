@@ -124,6 +124,9 @@
                 <li class="bar">
                     <a href="Help.html" style="color:white;">Help</a>
                 </li>
+                <li class="bar">
+                    <a href="Search.html" style="color:white;">Search</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -137,7 +140,7 @@
                     <input id="searcher" list="searchchoices" type="search" name="search" onclick="displaysearchtypes();" placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" onkeyup="showResult(this.value);" required>
                   <input name="typeofsearch" id="typeofsearch" type="search" style="display:none;" value="band">
                     <input type="submit" style="position: absolute; left: -9999px"/>
-                     
+
                      <div id="livesearch">
 
                     <datalist id="searchchoices">
@@ -182,7 +185,7 @@ function showResult(str) {
 	  }else if(document.getElementById('venue').checked){
 	  queryType="venue";
 	  document.getElementById("typeofsearch").value="venue";
-	  
+
 	  }
 
   xmlhttp.open("GET","livesearch?q="+str+"&searchtype="+queryType,true);

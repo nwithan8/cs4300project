@@ -39,23 +39,200 @@
 
 <body id="page-top">
 
-     <nav class="nav">
-        <div class="nav-header">
-            <span id="title" style="text-decoration:none;">EasyGig</span>
-            <ul class="menu">
-                <li class="bar">
-                    <a href="Login.html" style="color:white;">Login</a>
-                </li>
-                <li class="bar">
-                    <a href="AboutUs.html" style="color:white;">About</a>
-                </li>
-                <li class="bar">
-                    <a href="Help.html" style="color:white;">Help</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <body id="page-top"onload="movethem()" style="background-color:none;">
+      <style>
+          #searchradiobuttons {
+              display: none;
+          }
 
+          #b1,
+          #b3,
+          #b5,
+          #b7,
+          #b9,
+          #b11,
+          #b13,
+          #b15,
+          #b17,
+          #b19,
+          #b21,
+          #b23,
+          #b25,
+          #b27,
+          #b29{
+              background-color: #132e1d;
+              opacity: .5;
+          }
+
+          #b2,
+          #b4,
+          #b6,
+          #b8,
+          #b10,
+          #b12,
+          #b14,
+          #b16,
+          #b18,
+          #b20,
+          #b22,
+          #b24,
+          #b26,
+          #b28,
+          #b30{
+              background-color: #224730;
+              opacity: .5;
+          }
+
+          #bars {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              left: 0px;
+              top: 0px;
+              z-index: -1;
+          }
+
+          #bartable {
+              width: 100%;
+              height: 100%;
+          }
+
+          #bartable td {
+              padding: 1px;
+              vertical-align: bottom;
+          }
+
+          #background {
+              position: absolute;
+              left: 0px;
+              top: 0px;
+              z-index: -2;
+              width: 100%;
+              height: 100%;
+              background-image: url(img/header2small.jpg)
+          }
+      </style>
+
+       <nav class="nav">
+          <div class="nav-header">
+              <span id="title" style="text-decoration:none;">EasyGig</span>
+              <ul class="menu">
+                  <li class="bar">
+                      <a href="Login.html" style="color:white;">Login</a>
+                  </li>
+                  <li class="bar">
+                      <a href="AboutUs.html" style="color:white;">About</a>
+                  </li>
+                  <li class="bar">
+                      <a href="Help.html" style="color:white;">Help</a>
+                  </li>
+                  <li class="bar">
+                      <a href="Search.html" style="color:white;">Search</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+
+      <header style="height:250px;">
+
+          <div id="bars">
+                  <table id="bartable">
+                      <tr>
+                          <td>
+                              <div id="b1"></div>
+                          </td>
+                          <td>
+                              <div id="b2"></div>
+                          </td>
+                          <td>
+                              <div id="b3"></div>
+                          </td>
+                          <td>
+                              <div id="b4"></div>
+                          </td>
+                          <td>
+                              <div id="b5"></div>
+                          </td>
+                          <td>
+                              <div id="b6"></div>
+                          </td>
+                          <td>
+                              <div id="b7"></div>
+                          </td>
+                          <td>
+                              <div id="b8"></div>
+                          </td>
+                          <td>
+                              <div id="b9"></div>
+                          </td>
+                          <td>
+                              <div id="b10"></div>
+                          </td>
+                          <td>
+                              <div id="b11"></div>
+                          </td>
+                          <td>
+                              <div id="b12"></div>
+                          </td>
+                          <td>
+                              <div id="b13"></div>
+                          </td>
+                          <td>
+                              <div id="b14"></div>
+                          </td>
+                          <td>
+                              <div id="b15"></div>
+                          </td>
+                          <td>
+                              <div id="b16"></div>
+                          </td>
+                          <td>
+                              <div id="b17"></div>
+                          </td>
+                          <td>
+                              <div id="b18"></div>
+                          </td>
+                          <td>
+                              <div id="b19"></div>
+                          </td>
+                          <td>
+                              <div id="b20"></div>
+                          </td>
+                          <td>
+                              <div id="b21"></div>
+                          </td>
+                          <td>
+                              <div id="b22"></div>
+                          </td>
+                          <td>
+                              <div id="b23"></div>
+                          </td>
+                          <td>
+                              <div id="b24"></div>
+                          </td>
+                          <td>
+                              <div id="b25"></div>
+                          </td>
+                          <td>
+                              <div id="b26"></div>
+                          </td>
+                          <td>
+                              <div id="b27"></div>
+                          </td>
+                          <td>
+                              <div id="b28"></div>
+                          </td>
+                          <td>
+                              <div id="b29"></div>
+                          </td>
+                          <td>
+                              <div id="b30"></div>
+                          </td>
+                      </tr>
+                  </table>
+              </div>
+              <div id="background"></div>
+      </header>
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
@@ -123,7 +300,7 @@ if (typeof(Storage) !== "undefined") {
                                   <input type="url" name="twitter" style="color:grey; width:70%; margin-bottom:10px;">
                               </td>
                          </tr>
-        
+
                          <tr>
                               <td>
                                   <p>YouTube</p>

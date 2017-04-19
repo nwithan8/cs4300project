@@ -41,7 +41,7 @@
         #searchradiobuttons {
             display: none;
         }
-        
+
         #b1,
         #b3,
         #b5,
@@ -60,7 +60,7 @@
             background-color: #132e1d;
             opacity: .5;
         }
-        
+
         #b2,
         #b4,
         #b6,
@@ -79,7 +79,7 @@
             background-color: #224730;
             opacity: .5;
         }
-        
+
         #bars {
             position: absolute;
             width: 100%;
@@ -88,17 +88,17 @@
             top: 0px;
             z-index: -1;
         }
-        
+
         #bartable {
             width: 100%;
             height: 100%;
         }
-        
+
         #bartable td {
             padding: 1px;
             vertical-align: bottom;
         }
-        
+
         #background {
             position: absolute;
             left: 0px;
@@ -123,6 +123,9 @@
                 <li class="bar">
                     <a href="Help.html" style="color:white;">Help</a>
                 </li>
+                <li class="bar">
+                    <a href="Search.html" style="color:white;">Search</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -132,20 +135,7 @@
             <h1 id="homeHeading" style="z-index:1">A Band + A Venue</h1>
             <br>
             <form class="searchbar" style="z-index:1">
-                <form class="searchbar" style="padding-top:100px; background-color:transparent; color: #557c33">
-                    <input list="searchchoices" type="search" name="search" onclick=displaysearchtypes() placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
-                    <datalist id="searchchoices">
-                        <option value="Demo Band">
-                        <option value="Demo Venue">
-                        <option value="Demo Genre">
-                    </datalist>
-                    <br>
-                    <div id="searchradiobuttons">
-                        <input type="radio" name="searchtype" value="band"> Band
-                        <input type="radio" name="searchtype" value="venue"> Venue
-                        <input type="radio" name="searchtype" value="genre"> Genre
-                    </div>
-                </form>
+
                 <hr>
                 <h3>EasyGig is a platform for connecting bands and venues.</h3>
             </form>
