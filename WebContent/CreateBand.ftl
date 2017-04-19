@@ -67,7 +67,17 @@
                       <input style="display:none;"type="text"name="bandname" value="${bandname}">
                       <input style="display:none;"type="text"name="email" value="${email}">
                       <input style="display:none;"type="text"name="description" value="${description}">
+<script>
+// Check browser support
 
+if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("userID", "${id}");
+    localStorage.setItem("name","${bandname}");
+    // Retrieve
+} 
+
+</script>
 
                      <center>
                       <table style="width:80%">

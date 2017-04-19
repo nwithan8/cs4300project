@@ -87,6 +87,24 @@
                     <img src="https://placehold.it/600x400" class="center-block img-responsive">
                     <br>
                     <br>
+                    <div>
+                    <h1>Testing files</h1>
+                   Id: <p id="id"></p><br>
+                    Name: <p id ="name"></p><br>
+                    </div>
+                    <script>
+// Check browser support
+
+if (typeof(Storage) !== "undefined") {
+    // Store
+  var id =  localStorage.getItem("userID");
+   var name =  localStorage.getItem("name");
+    // Retrieve
+   document.getElementById("id").innerHTML += id;
+    document.getElementById("name").innerHTML += name;
+} 
+
+</script>
                     <h2 class="section-heading"name="bandname">${band_name}</h2>
                     <hr class="light">
                     <p>${band_description}</p>

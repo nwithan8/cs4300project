@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class SignUp
@@ -35,6 +36,9 @@ public class SignUp extends HttpServlet {
          <input type="text" name="password" placeholder="Password" style="color:grey; width:50%; margin-bottom:10px;"><br>
          <input type="text" name="passwordcheck" placeholder="Confirm Password" style="color:grey; width:50%; margin-bottom:10px;"><br>
          <input type=submit value="Sign Up" class="btn btn-default sr-button"><br><br> */
+		
+	      HttpSession session = request.getSession(true);
+	    
 		DBinteract database = new DBinteract();
 		String choice = request.getParameter("bandorvenue");
 		Boolean thechoice;
@@ -45,10 +49,10 @@ public class SignUp extends HttpServlet {
 		String bandname = request.getParameter("name");
 		String lastname = request.getParameter("lastname");
 		String description = request.getParameter("description");
-		database.createAccount(thechoice, username, password, bandname, description, email);
+		int id = database.createAccount(thechoice, username, password, bandname, description, email);
 		
 	
-        
+        request.setAttribute("id", id);
 		request.setAttribute("description",description );
 		request.setAttribute("email", email);
 		request.setAttribute("name", bandname);

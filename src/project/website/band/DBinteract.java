@@ -58,7 +58,7 @@ public class DBinteract{
 			System.out.println(query2);
 			z =  DatabaseAccessInterface.create(query2);
 		}
-		
+		z = Integer.parseInt(id);
 		return z;
 		
 
