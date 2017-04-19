@@ -37,7 +37,7 @@ public class CreateBand extends HttpServlet {
 		String youtube = request.getParameter("youtube");
 		String telephone = request.getParameter("phonenumber");
 		String[]genres = request.getParameterValues("genres");
-		database.fillBandInfo( bandname, facebook,  twitter,  soundcloud, youtube,  telephone);
+		DBinteract.fillBandInfo( bandname, facebook,  twitter,  soundcloud, youtube,  telephone);
 		
 	
         

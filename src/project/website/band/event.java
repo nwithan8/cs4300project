@@ -1,3 +1,4 @@
+package project.website.band;
 
 public class event {
 	public int id;

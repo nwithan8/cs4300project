@@ -2,7 +2,6 @@ package project.website.band;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Vector;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,17 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class livesearch
- */
-@WebServlet("/livesearch")
-public class livesearch extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+import project.website.objects.Band;
 
+/**
+ * Servlet implementation class OpenProfile
+ */
+@WebServlet("/OpenProfile")
+public class OpenProfile extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public livesearch() {
+    public OpenProfile() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,20 +31,21 @@ public class livesearch extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		DBinteract database = new DBinteract();
-		String search = request.getParameter("q");
-		Vector<String> searchresults = null;
+		String name = request.getParameter("search");
+		Band theband = new Band();
+		
 		try {
-			searchresults = DBinteract.getSearchResults(search);
+			theband = DBinteract.getBandInfo(name);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String searchresultsstuff = "SEARCH RESULTS <br>";
-		for(int i = 0; i<searchresults.size(); i++){
-			searchresultsstuff+="<input type='button' value='"+searchresults.get(i)+"' onclick=\"changeResults(this.value);\" >"+ "<br>";
-		}
-		response.getWriter().write(searchresultsstuff);
+        
+		request.setAttribute("band_name", theband.getName() );
+		request.setAttribute("band_email", theband.getEmail());
+		request.setAttribute("band_phone", theband.getTelephone());
+		request.setAttribute("band_description", theband.getDescription());
+		request.getRequestDispatcher("./Band.ftl").forward(request, response);//forwards the request
 	}
 
 	/**

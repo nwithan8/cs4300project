@@ -2,6 +2,9 @@ package project.website.band;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
+
+import project.website.objects.Band;
 
 
 
@@ -104,6 +107,206 @@ public class DBinteract{
 		int z =  DatabaseAccessInterface.create(query);
 		
 		return z;
+	}
+	
+	public static int getMaxEventId(){
+		String query = "select MAX(id) from events ";
+		int id = 1;
+		System.out.println(query);
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		
+		
+		try {
+			int result = -2;
+			while(rs.next())result = rs.getInt(1);
+			System.out.println("result: " + result);
+			int done = result + 1;
+			System.out.println("done:" + done);
+			id = done;
+		} catch (SQLException e) {
+			System.out.println("we had an error.");
+			return -1;
+		}
+		
+		return id;
+	}
+	public static int getMaxApplicationId(){
+		String query = "select MAX(id) from applications ";
+		int id = 1;
+		System.out.println(query);
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		
+		
+		try {
+			int result = -2;
+			while(rs.next())result = rs.getInt(1);
+			System.out.println("result: " + result);
+			int done = result + 1;
+			System.out.println("done:" + done);
+			id = done;
+		} catch (SQLException e) {
+			System.out.println("we had an error.");
+			return -1;
+		}
+		
+		return id;
+	}
+	public static int createEvent(int venue_id, String title, String date, String description){
+		String query = "insert into events values (";
+		int id = getMaxEventId();
+		int isFilled = 0;
+		query += id;
+		query += "," + venue_id;
+		query += ",\"" + title;
+		query += "\",\"" + date;
+		query += "\"," + isFilled;
+		query += ", NULL , \"";
+		query += description + "\");";
+		System.out.println(query);
+		return DatabaseAccessInterface.create(query);
+
+	}
+	public static int createApplication(int event_id, int band_id){
+		String query = "insert into applications values (";
+		int id = getMaxApplicationId();
+		query += id + "," + event_id + "," + band_id + ");";
+		System.out.println(query);
+		return DatabaseAccessInterface.create(query);
+	}
+	public static int acceptApplication(int event_id, int band_id){
+		//updates the event so it is now filled
+		String query = "UPDATE events SET isFilled = 1, band_id =" + band_id + " WHERE id = " + event_id;
+		System.out.println(query);
+		return DatabaseAccessInterface.update(query);
+
+	}
+	public static int denyApplication(int event_id, int band_id){
+		String query = "DELETE FROM applications WHERE event_id = " + event_id + " AND band_id = " + band_id + ";";
+		System.out.println(query);
+		return DatabaseAccessInterface.delete(query);
+	}
+	public static Vector<application >getApplicationsByBand(int band_id){
+		Vector<application> bandapps = new Vector<application>();
+		String query = "SELECT * FROM applications WHERE band_id = " + band_id; 
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		try {
+			
+			while(rs.next()){
+				application app = new application(rs.getInt(1),rs.getInt(2),rs.getInt(3));
+				bandapps.add(app);
+			}
+			
+		} catch (SQLException e) {
+			return null;
+		}
+		return bandapps;
+	}
+	public static Vector<application> getApplicationsByEvent(int event_id){
+		Vector<application> eventapps = new Vector<application>();
+		String query = "SELECT * FROM applications WHERE event_id = " + event_id; 
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		try {
+			
+			while(rs.next()){
+				application app = new application(rs.getInt(1),rs.getInt(2),rs.getInt(3));
+				eventapps.add(app);
+			}
+			
+		} catch (SQLException e) {
+			return null;
+		}
+		return eventapps;
+	}
+	public static Vector<event> getEvents(){
+		Vector<event> currEvents = new Vector<event>();
+		String query = "SELECT * FROM events";
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		try {
+			
+			while(rs.next()){
+				boolean curr = false;
+				if(rs.getInt(5) == 1)curr = true;
+				event evnt = new event(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4), curr, rs.getInt(6),rs.getString(7));
+				currEvents.add(evnt);
+			}
+			
+		} catch (SQLException e) {
+			return null;
+		}
+		return currEvents;
+	}
+	public static Vector<event> getEventsByVenue(int venue_id){
+		Vector<event> currEvents = new Vector<event>();
+		String query = "SELECT * FROM events WHERE venue_id = " + venue_id;
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		try {
+			
+			while(rs.next()){
+				boolean curr = false;
+				if(rs.getInt(5) == 1)curr = true;
+				event evnt = new event(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4), curr, rs.getInt(6),rs.getString(7));
+				currEvents.add(evnt);
+			}
+			
+		} catch (SQLException e) {
+			return null;
+		}
+		return currEvents;
+	}
+	public static Vector<String> getSearchResults(String str) throws SQLException{
+		Vector<String> SearchResults = new Vector<String>();
+		String query = "SELECT band_name FROM band WHERE band_name LIKE '%"+str+"%';";
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		while(rs.next()){
+			SearchResults.add(rs.getString(1));
+		}
+		
+		return SearchResults;
+		
+	}
+	public static Band getBandInfo(String bandname) throws SQLException{
+		Band theBand = new Band();
+		String query = "SELECT * FROM band WHERE band_name = '"+bandname+"';";
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		while(rs.next()){
+			String band_name=rs.getString("band_name");
+			String description=rs.getString("description");
+			String telephone=rs.getString("telephone");
+			String email=rs.getString("email");
+			String facebook=rs.getString("facebook");
+			String twitter=rs.getString("twitter");
+			String soundcloud=rs.getString("soundcloud");
+			String youtube=rs.getString("youtube");
+			theBand.setName(band_name);
+			theBand.setDescription("description");
+			theBand.setTelephone(telephone);
+			theBand.setEmail(email);
+			theBand.setFacebook(facebook);
+			theBand.setTwitter(twitter);
+			theBand.setSoundcloud(soundcloud);
+			theBand.setYoutube(youtube);
+		}
+		
+		return theBand;
+		
+	}
+	public static Vector<event> getEventsByBand(int band_id){
+		Vector<event> currEvents = new Vector<event>();
+		String query = "SELECT * FROM events WHERE band_id = " + band_id;
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		try {
+			
+			while(rs.next()){
+				boolean curr = false;
+				if(rs.getInt(5) == 1)curr = true;
+				event evnt = new event(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4), curr, rs.getInt(6),rs.getString(7));
+				currEvents.add(evnt);
+			}
+			
+		} catch (SQLException e) {
+			return null;
+		}
+		return currEvents;
 	}
 	
 }

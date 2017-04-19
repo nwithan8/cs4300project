@@ -131,9 +131,10 @@
     <header style="height:250px;">
         <center>
           <h1>Search For Bands or Venues</h1>
-                <form class="searchbar" style="padding-top:100px; background-color:transparent; color: #557c33">
-                    <input list="searchchoices" type="search" name="search" onclick=displaysearchtypes() placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" onkeyup="showResult(this.value)" required>
-                     <div id="livesearch"></div>
+                <form class="searchbar" action = "./OpenProfile" method="post" style="padding-top:100px; background-color:transparent; color: #557c33">
+                    <input id="searcher" list="searchchoices" type="search" name="search" onclick="displaysearchtypes();" placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" onkeyup="showResult(this.value);" required>
+                     <div id="livesearch">
+
                     <datalist id="searchchoices">
                         <option value="Demo Band">
                         <option value="Demo Venue">
@@ -145,7 +146,14 @@
                         <input type="radio" name="searchtype" value="venue"> Venue
                         <input type="radio" name="searchtype" value="genre"> Genre
                     </div>
+                    <input type="submit" style="position: absolute; left: -9999px"/>
                 </form>
+
+                <script>
+                function changeResults(str){
+                    document.getElementById('searcher').value = str;
+                    }
+                </script>
                 <script>
 function showResult(str) {
   if (str.length==0) {
