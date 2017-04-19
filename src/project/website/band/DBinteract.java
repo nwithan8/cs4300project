@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.Vector;
 
 import project.website.objects.Band;
+import project.website.objects.Venue;
 
 
 
@@ -259,14 +260,22 @@ public class DBinteract{
 		}
 		return currEvents;
 	}
-	public static Vector<String> getSearchResults(String str) throws SQLException{
+	public static Vector<String> getSearchResults(String str, String queryType) throws SQLException{
 		Vector<String> SearchResults = new Vector<String>();
+		if(queryType.equals("band")){
 		String query = "SELECT band_name FROM band WHERE band_name LIKE '%"+str+"%';";
 		ResultSet rs = DatabaseAccessInterface.retrieve(query);
 		while(rs.next()){
 			SearchResults.add(rs.getString(1));
 		}
-		
+		}else if(queryType.equals("venue")){
+			String query = "SELECT venue_name FROM venue WHERE venue_name LIKE '%"+str+"%';";
+			ResultSet rs = DatabaseAccessInterface.retrieve(query);
+			while(rs.next()){
+				SearchResults.add(rs.getString(1));
+			}
+			
+		}
 		return SearchResults;
 		
 	}
@@ -294,6 +303,30 @@ public class DBinteract{
 		}
 		
 		return theBand;
+		
+	}
+	public static Venue getVenueInfo(String venuename) throws SQLException{
+		Venue theVenue = new Venue();
+		String query = "SELECT * FROM venue WHERE venue_name = '"+venuename+"';";
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		while(rs.next()){
+			String venue_name=rs.getString("venue_name");
+			String description=rs.getString("description");
+			String telephone=rs.getString("telephone");
+			String email=rs.getString("email");
+			String facebook=rs.getString("facebook");
+			String twitter=rs.getString("twitter");
+			String youtube=rs.getString("youtube");
+			theVenue.setVenue_name(venue_name);
+			theVenue.setDescription(description);
+			theVenue.setTelephone(telephone);
+			theVenue.setEmail(email);
+			theVenue.setFacebook(facebook);
+			theVenue.setTwitter(twitter);
+			theVenue.setYoutube(youtube);
+		}
+		
+		return theVenue;
 		
 	}
 	public static Vector<event> getEventsByBand(int band_id){

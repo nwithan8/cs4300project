@@ -32,9 +32,10 @@ public class livesearch extends HttpServlet {
 		// TODO Auto-generated method stub
 		DBinteract database = new DBinteract();
 		String search = request.getParameter("q");
+		String searchType = request.getParameter("searchtype");
 		Vector<String> searchresults = null;
 		try {
-			searchresults = DBinteract.getSearchResults(search);
+			searchresults = DBinteract.getSearchResults(search,searchType);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
