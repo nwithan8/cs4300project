@@ -267,6 +267,17 @@
                         Create an Event
                     </button>
                     </a>
+                    <script type="text/javascript">
+	function artist(){
+		var a=document.getElementById("artist").value;
+		document.getElementById("myartist").innerHTML=a;
+		var b=document.getElementById("artist");
+		b.parentNode.removeChild(b);
+		return false;	
+		document.getElementById("but").style.visibility='hidden';
+	}
+</script>
+                    
                     <form action="./CreateEventVenue" method="get">
                         <table>
     <tr>
@@ -285,12 +296,11 @@
         <td>Description: </td>
         <td style="color: black;">${description}</td>
     </tr>
-    <tr>
-    <td>Artist:</td>
-    <td style="color: black;">${artist}</td>
-    </tr>
     </table>
                     </form>
+     Artist: <input type="text" name="artist" id="artist"/>
+    <div id="myartist"></div>
+    <input type="button" value="Submit" id="but" onclick="artist()"/>
                 </div>
             </div>
         </div>
