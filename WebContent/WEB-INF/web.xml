@@ -77,7 +77,7 @@
     <servlet-name>OpenProfile</servlet-name>
     <url-pattern>/OpenProfile</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <servlet-name>CreateVenue</servlet-name>
     <servlet-class>project.website.band.CreateVenue</servlet-class>
   </servlet>
@@ -85,7 +85,6 @@
     <servlet-name>CreateVenue</servlet-name>
     <url-pattern>/CreateVenue</url-pattern>
   </servlet-mapping>
-  
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>FreeMarker MVC Views</web-resource-name>

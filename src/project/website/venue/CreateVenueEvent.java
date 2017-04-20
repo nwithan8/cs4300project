@@ -18,6 +18,7 @@ import freemarker.template.SimpleHash;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
+import project.website.band.DBinteract;
 
 /**
  * Servlet implementation class hello
@@ -49,15 +50,17 @@ public class CreateVenueEvent extends HttpServlet {
 		
 		String name = request.getParameter("name");
 		String date = request.getParameter("date");
-		String genre= request.getParameter("genre");
+		String description = request.getParameter("description");
+		String id = request.getParameter("identity");
 		root.put("name", name);
 		root.put("date", date);
-		root.put("genre", genre);
+		root.put("description", description);
 		
+		DBinteract.createEvent(Integer.parseInt(id), name, date, description);
 		
-		try {
-			String templateName = "CreateVenueEvent.ftl";
-			template = cfg.getTemplate(templateName );
+	/*	try {
+			String templateName = "Venue.ftl";
+			template = cfg.getTemplate(templateName);
 			response.setContentType("text/html");
 			Writer out = response.getWriter();
 			template.process(root, out);
@@ -65,7 +68,7 @@ public class CreateVenueEvent extends HttpServlet {
 			e.printStackTrace();
 		} catch (TemplateException e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

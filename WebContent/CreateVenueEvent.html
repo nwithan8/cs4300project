@@ -249,15 +249,11 @@
         <table>
             <tr>
                 <td>Name:</td>
-                <td> <input type="text" name="name" style="color:black"/></td>
+                <td> <input type="text" name="name" style="color:black"/><input type="text" id="identity"name="identity"style = "display: none;"></input></td>
             </tr>
             <tr>
                 <td>Date: </td>
                 <td><input type="text" name="date" style="color:black"/></td>
-            </tr>
-            <tr>
-                <td>Preferred Genre:</td>
-                <td><input type="text" name="genre" style="color:black"/></td>
             </tr>
             <tr>
                 <td>Description:</td>
@@ -269,7 +265,9 @@
             <input type="submit" value="Submit" style="background-color:#175411; color:white; font-size:30px; padding-top:none;"/>
         </form>
     </div>
-    
+    <script>
+	document.getElementById("identity").value= localStorage.getItem("userID");
+    </script>
    
     
         <!-- jQuery -->
