@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee" 
-		xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-		http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	id="WebApp_ID" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://java.sun.com/xml/ns/javaee" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>BandProject</display-name>
   <welcome-file-list>
-    <welcome-file>/AboutUs.html</welcome-file>
+    <welcome-file> /AboutUs.html</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>freemarker</servlet-name>
@@ -58,15 +53,6 @@
     <servlet-name>CreateBand</servlet-name>
     <url-pattern>/CreateBand</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
-    <servlet-name>PostToFeed</servlet-name>
-    <servlet-class>project.website.band.PostToFeed</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>PostToFeed</servlet-name>
-    <url-pattern>/PostToFeed</url-pattern>
-  </servlet-mapping>
   <servlet>
     <servlet-name>SignUp</servlet-name>
     <servlet-class>project.website.band.SignUp</servlet-class>
@@ -74,6 +60,30 @@
   <servlet-mapping>
     <servlet-name>SignUp</servlet-name>
     <url-pattern>/SignUp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>livesearch</servlet-name>
+    <servlet-class>project.website.band.livesearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>livesearch</servlet-name>
+    <url-pattern>/livesearch</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>OpenProfile</servlet-name>
+    <servlet-class>project.website.band.OpenProfile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OpenProfile</servlet-name>
+    <url-pattern>/OpenProfile</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>CreateVenue</servlet-name>
+    <servlet-class>project.website.band.CreateVenue</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateVenue</servlet-name>
+    <url-pattern>/CreateVenue</url-pattern>
   </servlet-mapping>
   <security-constraint>
     <web-resource-collection>

@@ -54,14 +54,6 @@
     <url-pattern>/CreateBand</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>PostToFeed</servlet-name>
-    <servlet-class>project.website.band.PostToFeed</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>PostToFeed</servlet-name>
-    <url-pattern>/PostToFeed</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <servlet-name>SignUp</servlet-name>
     <servlet-class>project.website.band.SignUp</servlet-class>
   </servlet>
@@ -93,6 +85,7 @@
     <servlet-name>CreateVenue</servlet-name>
     <url-pattern>/CreateVenue</url-pattern>
   </servlet-mapping>
+  
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>FreeMarker MVC Views</web-resource-name>

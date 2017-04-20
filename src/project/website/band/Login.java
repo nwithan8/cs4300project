@@ -20,6 +20,8 @@ import freemarker.template.SimpleHash;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
+import project.website.objects.Band;
+import project.website.objects.Venue;
 
 /**
  * Servlet implementation class DatabaseAccess
@@ -149,7 +151,49 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(ResultSet result, HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		runTemplate(request, response);
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		Band theband = new Band();
+		Venue thevenue= new Venue();
+		int id = DBinteract.login(username, password);
+		if(id>=2000000){
+			try {
+				thevenue = DBinteract.getVenueInfoById(id);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			request.setAttribute("venue_name", thevenue.getVenue_name() );
+			request.setAttribute("venue_email", thevenue.getEmail());
+			request.setAttribute("venue_phone", thevenue.getTelephone());
+			request.setAttribute("venue_description", thevenue.getDescription());
+			request.setAttribute("facebook", thevenue.getFacebook());
+			request.setAttribute("twitter", thevenue.getTwitter());
+			request.setAttribute("youtube", thevenue.getYoutube());
+			request.getRequestDispatcher("./Venue.ftl").forward(request, response);//forwards the request
+			
+		}else if(id<2000000){
+			
+			try {
+				theband = DBinteract.getBandInfoById(id);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			request.setAttribute("band_name", theband.getName() );
+			request.setAttribute("band_email", theband.getEmail());
+			request.setAttribute("band_phone", theband.getTelephone());
+			request.setAttribute("band_description", theband.getDescription());
+			request.setAttribute("facebook", theband.getFacebook());
+			request.setAttribute("twitter", theband.getTwitter());
+			request.setAttribute("youtube", theband.getYoutube());
+			request.setAttribute("soundcloud", theband.getSoundcloud());
+			request.getRequestDispatcher("./Band.ftl").forward(request, response);//forwards the request
+			
+		}else{
+			response.getWriter().write("Account info not found!");
+		}
 	}
 
 	/**

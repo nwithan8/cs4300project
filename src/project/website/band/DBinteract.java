@@ -305,9 +305,59 @@ public class DBinteract{
 		return theBand;
 		
 	}
+	public static Band getBandInfoById(int id) throws SQLException{
+		Band theBand = new Band();
+		String query = "SELECT * FROM band WHERE id = '"+id+"';";
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		while(rs.next()){
+			String band_name=rs.getString("band_name");
+			String description=rs.getString("description");
+			String telephone=rs.getString("telephone");
+			String email=rs.getString("email");
+			String facebook=rs.getString("facebook");
+			String twitter=rs.getString("twitter");
+			String soundcloud=rs.getString("soundcloud");
+			String youtube=rs.getString("youtube");
+			theBand.setName(band_name);
+			theBand.setDescription("description");
+			theBand.setTelephone(telephone);
+			theBand.setEmail(email);
+			theBand.setFacebook(facebook);
+			theBand.setTwitter(twitter);
+			theBand.setSoundcloud(soundcloud);
+			theBand.setYoutube(youtube);
+		}
+		
+		return theBand;
+		
+	}
 	public static Venue getVenueInfo(String venuename) throws SQLException{
 		Venue theVenue = new Venue();
 		String query = "SELECT * FROM venue WHERE venue_name = '"+venuename+"';";
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		while(rs.next()){
+			String venue_name=rs.getString("venue_name");
+			String description=rs.getString("description");
+			String telephone=rs.getString("telephone");
+			String email=rs.getString("email");
+			String facebook=rs.getString("facebook");
+			String twitter=rs.getString("twitter");
+			String youtube=rs.getString("youtube");
+			theVenue.setVenue_name(venue_name);
+			theVenue.setDescription(description);
+			theVenue.setTelephone(telephone);
+			theVenue.setEmail(email);
+			theVenue.setFacebook(facebook);
+			theVenue.setTwitter(twitter);
+			theVenue.setYoutube(youtube);
+		}
+		
+		return theVenue;
+		
+	}
+	public static Venue getVenueInfoById(int id) throws SQLException{
+		Venue theVenue = new Venue();
+		String query = "SELECT * FROM venue WHERE id = '"+id+"';";
 		ResultSet rs = DatabaseAccessInterface.retrieve(query);
 		while(rs.next()){
 			String venue_name=rs.getString("venue_name");
