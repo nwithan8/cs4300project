@@ -141,6 +141,9 @@
                   <li class="bar">
                       <a href="Search.html" style="color:white;">Search</a>
                   </li>
+                  <li class="bar">
+                      <a href="Inbox.html" style="color:white;">Inbox</a>
+                  </li>
               </ul>
           </div>
       </nav>

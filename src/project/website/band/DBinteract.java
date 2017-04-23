@@ -1,8 +1,11 @@
 package project.website.band;
 
+import project.website.objects.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
+
+import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 
 import project.website.objects.Band;
 import project.website.objects.Venue;
@@ -10,6 +13,36 @@ import project.website.objects.Venue;
 
 
 public class DBinteract{
+	public static Vector<project.website.objects.Message> getMessages(String username) throws SQLException{
+		Vector<project.website.objects.Message> messageVector = new Vector <project.website.objects.Message>();
+		String query = "Select * from messages where recipient_name ="+username;
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		while(rs.next()){
+			project.website.objects.Message newMessage = new project.website.objects.Message();
+			newMessage.setRecipient_id(Integer.parseInt(rs.getString("recipient_id")));
+			newMessage.setRecipient_name(rs.getString("recipient_name"));
+			newMessage.setSender_id(Integer.parseInt(rs.getString("sender_id")));
+			newMessage.setSender_name(rs.getString("sender_name"));
+			newMessage.setTime_sent(rs.getString("time_sent"));
+			newMessage.setContents(rs.getString("contents"));
+			newMessage.setTitle(rs.getString("title"));
+		
+			messageVector.add(newMessage);
+		}
+		return messageVector;
+		
+	}
+	public static int createMessage (String sender_name, String sender_id, String recipient_name, String recipient_id, String title, String contents, String timesent){
+		int z = 0;
+		String query = "INSERT INTO messages values (";
+		query +="null" + ", '" + sender_name + "','" + recipient_name + "'," + sender_id + "," + recipient_id + "," + title;
+		//,"here is a message","1-1-2017");";
+		query += ",'" + contents + "','" + timesent + "');"; 
+		System.out.println(query);
+		z =  DatabaseAccessInterface.create(query);
+		return z;
+		}
+	
 	public static int login(String username, String password){
 		int success = 0;
 		int numResults = 0;
@@ -173,6 +206,7 @@ public class DBinteract{
 		return DatabaseAccessInterface.create(query);
 
 	}
+
 	public static int createApplication(int event_id, int band_id){
 		String query = "insert into applications values (";
 		int id = getMaxApplicationId();
@@ -224,7 +258,7 @@ public class DBinteract{
 		}
 		return eventapps;
 	}
-	
+
 	public static Vector<String> getApplicantsByEventID(int eventid){
 		Vector<String> applicantlist = new Vector<String>();
 		String query = "Select band_name from band join applications ON applications.band_id = band.id  AND applications.event_id ="+eventid+";";
@@ -304,6 +338,7 @@ public class DBinteract{
 		String query = "SELECT * FROM band WHERE band_name = '"+bandname+"';";
 		ResultSet rs = DatabaseAccessInterface.retrieve(query);
 		while(rs.next()){
+			String id = rs.getString("id");
 			String band_name=rs.getString("band_name");
 			String description=rs.getString("description");
 			String telephone=rs.getString("telephone");
@@ -312,6 +347,7 @@ public class DBinteract{
 			String twitter=rs.getString("twitter");
 			String soundcloud=rs.getString("soundcloud");
 			String youtube=rs.getString("youtube");
+			theBand.setId(Integer.parseInt(id));
 			theBand.setName(band_name);
 			theBand.setDescription("description");
 			theBand.setTelephone(telephone);
@@ -356,6 +392,7 @@ public class DBinteract{
 		String query = "SELECT * FROM venue WHERE venue_name = '"+venuename+"';";
 		ResultSet rs = DatabaseAccessInterface.retrieve(query);
 		while(rs.next()){
+			String id = rs.getString("id");
 			String venue_name=rs.getString("venue_name");
 			String description=rs.getString("description");
 			String telephone=rs.getString("telephone");
@@ -363,6 +400,7 @@ public class DBinteract{
 			String facebook=rs.getString("facebook");
 			String twitter=rs.getString("twitter");
 			String youtube=rs.getString("youtube");
+			theVenue.setId(Integer.parseInt(id));
 			theVenue.setVenue_name(venue_name);
 			theVenue.setDescription(description);
 			theVenue.setTelephone(telephone);
