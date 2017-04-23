@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class showEvents
+ * Servlet implementation class showBandEvents
  */
-@WebServlet("/showEvents")
-public class showEvents extends HttpServlet {
+@WebServlet("/showBandEvents")
+public class showBandEvents extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public showEvents() {
+    public showBandEvents() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,11 +32,9 @@ public class showEvents extends HttpServlet {
 		String venuename = request.getParameter("name");
 		System.out.println("Name of venue querying events for is... "+ venuename);
 		String Response=""; 
-		Vector <event> eventvector = DBinteract.getEventsByVenueName(venuename);
-		Vector <String> applicants = new Vector<String>();
+		Vector <event> eventvector = DBinteract.getEventsByBandName(venuename);
 		
 		for(int i = 0; i<eventvector.size(); i++){
-			applicants = DBinteract.getApplicantsByEventID(eventvector.get(i).getId());
 			
 			Response +="<center><h2 style='color:white;'>Event Number "+(i+1)+"</h2><br>";
 	Response+= " <form style='color:white'action='' method='get'><br><br>";
@@ -54,30 +52,20 @@ Response+="<td style='color: white;'>Description: </td>";
 Response+="<td style='color: white;'>"+eventvector.get(i).getDescription()+"</td>";
 
 Response+="</tr>";
-Response+="<tr>";
-Response+="<td style='color: white;'>Applicant List: </td>";
-
-Response+="</tr>";
 
 
-for(int z = 0; z<applicants.size(); z++){
-	Response+="<trstyle='text-align:center'>";
-	Response+="<td style='color: red;'>"+applicants.get(z)+" </td>";
-	Response+="</tr>";
-
-	
-}
 Response+="</table>";
 Response+="<div id='myartist"+i+"'></div>";
 Response+= "   </form>";
 
-Response+="<button value='Sign Up!' id='but"+i+"' onclick='signUp("+eventvector.get(i).getId()+");'>Sign Up!</button></center>";
+Response+="</center>";
 
 		}
 		response.getWriter().write(Response);
 
 		
 	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

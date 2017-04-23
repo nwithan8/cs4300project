@@ -33,7 +33,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
 </head>
 
 <body id="page-top"onload="movethem()" style="background-color:none;">
@@ -41,7 +49,7 @@
         #searchradiobuttons {
             display: none;
         }
-        
+
         #b1,
         #b3,
         #b5,
@@ -60,7 +68,7 @@
             background-color: #132e1d;
             opacity: .5;
         }
-        
+
         #b2,
         #b4,
         #b6,
@@ -79,7 +87,7 @@
             background-color: #224730;
             opacity: .5;
         }
-        
+
         #bars {
             position: absolute;
             width: 100%;
@@ -88,17 +96,17 @@
             top: 0px;
             z-index: -1;
         }
-        
+
         #bartable {
             width: 100%;
             height: 100%;
         }
-        
+
         #bartable td {
             padding: 1px;
             vertical-align: bottom;
         }
-        
+
         #background {
             position: absolute;
             left: 0px;
@@ -128,22 +136,7 @@
     </nav>
 
     <header style="height:250px;">
-        <center>
-                <form class="searchbar" style="padding-top:100px; background-color:transparent; color: #557c33">
-                    <input list="searchchoices" type="search" name="search" onclick=displaysearchtypes() placeholder="Search band, venue, genre..." style="padding-left:20px; width:70%; height:50px; background-color:transparent; border:2px solid #ccc; border-radius:20px; color:white; font-weight:bold;" required>
-                    <datalist id="searchchoices">
-                        <option value="Demo Band">
-                        <option value="Demo Venue">
-                        <option value="Demo Genre">
-                    </datalist>
-                    <br>
-                    <div id="searchradiobuttons">
-                        <input type="radio" name="searchtype" value="band"> Band
-                        <input type="radio" name="searchtype" value="venue"> Venue
-                        <input type="radio" name="searchtype" value="genre"> Genre
-                    </div>
-                </form>
-        </center>
+  
         <div id="bars">
                 <table id="bartable">
                     <tr>
@@ -243,35 +236,35 @@
             <div id="background"></div>
     </header>
     <center>
-    
+
     <h1 style="text-align:center; color:white; text-decoration: underline">Create an Event</h1>
     <div class="description" style="color: white; font-size:16 pt;">
-        <form action="./CreateVenueEvent" method="get">
+        <form action="./CreateVenueEvent" style="color:white;"method="get">
         <table>
             <tr>
-                <td>Name:</td>
-                <td> <input type="text" name="name" style="color:black"/><input type="text" id="identity"name="identity"style = "display: none;"></input></td>
+                <td style="color:white;">Name:</td>
+                <td> <input type="text" name="name" style="height:50px;border-radius:20px;font-size:20pt;background:transparent;color:white;"/><input type="text" id="identity"name="identity"style = "display: none;"></input></td>
             </tr>
             <tr>
-                <td>Date: </td>
-                <td><input type="text" name="date" style="color:black"/></td>
+                <td style="color:white;">Date: </td>
+                <td><input type="text" id="datepicker" name="date" style="height:50px;border-radius:20px;font-size:20pt;background:transparent;color:white;"/></td>
             </tr>
             <tr>
-                <td>Description:</td>
-                <td><textarea rows="10" cols="30" name="description" style="color:black"></textarea> </td>
-                
+                <td style="color:white;">Description:</td>
+                <td><textarea rows="10" cols="30" name="description" style="border-radius:20px;background:transparent;color:white;"></textarea> </td>
+
             </tr>
             </table>
             <br/>
-            <input type="submit" value="Submit" style="background-color:#175411; color:white; font-size:30px; padding-top:none;"/>
+            <input type="submit" value="Submit" style="background-color:#175411; color:white; font-size:30px; border-radius:20px;padding-top:none;"/>
         </form>
     </div>
     </center>
     <script>
 	document.getElementById("identity").value= localStorage.getItem("userID");
     </script>
-   
-    
+
+
         <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 

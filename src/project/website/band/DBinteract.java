@@ -416,10 +416,28 @@ public class DBinteract{
 		Vector<event> events = getEventsByVenue(id);
 		return events;
 	}
+	public static Vector<event> getEventsByBandName(String band_name){
+		int id = -1;
+		String query = "SELECT * FROM band WHERE band_name = '" + band_name + "';";
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		try {
+			
+			while(rs.next()){
+				id = rs.getInt(1);
+				System.out.println("Found band with matching ID");
+			}
+			
+		} catch (SQLException e) {
+			return null;
+		}
+		Vector<event> events = getEventsByBand(id);
+		return events;
+	}
 	
 	public static Vector<event> getEventsByBand(int band_id){
+		String query = "Select * from events join applications ON applications.band_id = "+band_id+"  AND events.id = applications.event_id;";
+
 		Vector<event> currEvents = new Vector<event>();
-		String query = "SELECT * FROM events WHERE band_id = " + band_id;
 		ResultSet rs = DatabaseAccessInterface.retrieve(query);
 		try {
 			

@@ -259,57 +259,11 @@ if (typeof(Storage) !== "undefined") {
                       <table style="width:80%">
 
                           <tr>
-                              <td>
-                                  <p>Photo</p>
-                              </td>
-                              <td>
-                                  <input type="file" name="bandphoto" style="width:70%; margin-bottom:10px;">
-                              </td>
+
                          </tr>
 
                           <tr>
-                              <td>
-                                  <p>Genre(s)*</p>
-                              </td>
-                              <td>
-                                  <select name="genres" size="5" style="color:black;" multiple required>
-                                      <optgroup label="Rock">
-                                          <option value="heavyrock">Heavy Rock</option>
-                                          <option value="classicrock">Classic Rock</option>
-                                          <option value="punkrock">Punk Rock</option>
-                                          <option value="modernrock">Modern Rock</option>
-                                      </optgroup>
-                                      <optgroup label="Pop">
-                                          <option value="top40spop">Top 40s</option>
-                                          <option value="dancepop">Dance Pop</option>
-                                          <option value="classicpop">Classic Pop</option>
-                                      </optgroup>
-                                      <optgroup label="Country">
-                                          <option value="comtemporarycountry">Contemporary</option>
-                                          <option value="bluegrasscountry">Bluegrass</option>
-                                          <option value="urbancountry">Urban Country</option>
-                                      </optgroup>
-                                      <optgroup label="Alternative">
-                                          <option value="altrock">Alternative Rock</option>
-                                          <option value="altpop">Alternative Pop</option>
-                                          <option value="altrap">Alternative Rap</option>
-                                          <option value="indie">Indie</option>
-                                      </optgroup>
-                                      <optgroup label="Hip Hop / Rap">
-                                          <option value="hiphop">Hip Hop</option>
-                                          <option value="gangsta">Gangsta Rap</option>
-                                          <option value="oldschoolrap">Old School Rap</option>
-                                      </optgroup>
-                                      <optgroup label="Instrumental">
-                                          <option value="electronic">Electronic / Dance</option>
-                                          <option value="dubstep">Dubstep</option>
-                                          <option value="jazz">Jazz</option>
-                                          <option value="classical">Classical</option>
-                                      </optgroup>
-                                      <option value="vocal">Vocal</option>
-                                      <option value="other">Other</option>
-                                  </select>
-                              </td>
+
                          </tr>
                          <tr>
                               <td>

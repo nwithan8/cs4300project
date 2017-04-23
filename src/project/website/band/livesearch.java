@@ -42,7 +42,7 @@ public class livesearch extends HttpServlet {
 		}
 		String searchresultsstuff = "SEARCH RESULTS <br>";
 		for(int i = 0; i<searchresults.size(); i++){
-			searchresultsstuff+="<input type='button' value='"+searchresults.get(i)+"' onclick=\"changeResults(this.value);\" >"+ "<br>";
+			searchresultsstuff+="<input type='button' style='background:transparent; border:none; font-size:15pt;' value='"+searchresults.get(i)+"' onclick=\"changeResults(this.value);\" >"+ "<br>";
 		}
 		response.getWriter().write(searchresultsstuff);
 	}

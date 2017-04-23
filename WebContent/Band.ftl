@@ -255,8 +255,8 @@
                     <img src="https://placehold.it/600x400" class="center-block img-responsive">
                     <br>
                     <br>
-                    <div>
-                    <h1>Testing files</h1>
+                    <div style="display:none;">
+                    <h1 style="display:none;">Testing files</h1>
                    Id: <p id="id"></p><br>
                     Name: <p id ="name"></p><br>
                     </div>
@@ -278,7 +278,6 @@ if (typeof(Storage) !== "undefined") {
                     <p>${band_description}</p>
                     <p>${band_email}</p>
                     <p>${band_phone}</p>
-                    <h4 style="font-style:oblique;"><a href="band.html" class="text-faded">Genre</a> <a href="band.html" class="text-faded">Genre</a> <a href="band.html" class="text-faded">Genre</a></h4>
                     <br>
                     <a href="${facebook}" class="btn btn-default btn-xl sr-button">Facebook</a>
                     <a href="${twitter}" class="btn btn-default btn-xl sr-button">Twitter</a>
@@ -317,145 +316,46 @@ var i=0;
         </div>
     </section>
 
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Details</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="service-box">
-                        <a href=""><i class="material-icons" style="font-size:60px;">date_range</i>
-                        <h3>Schedule</h3></a>
-                        <p class="text-muted">When are you available?</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="service-box">
-                        <a href=""><i class="material-icons" style="font-size:60px;">attach_money</i>
-                        <h3>Pricing</h3></a>
-                        <p class="text-muted">How much do you charge?</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="service-box">
-                        <a href=""><i class="material-icons" style="font-size:60px;">thumbs_up_down</i>
-                        <h3>Reviews</h3></a>
-                        <p class="text-muted">What do other people think?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <section class="no-padding" id="gallery">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Gallery</h2>
+                    <h2 class="section-heading">Past and Upcoming Performances</h2>
                     <hr class="primary">
+                    <button type="button"class="btn btn-default btn-xl" onclick="showEvents();"name="button">Show Events</button>
+
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row no-gutter popup-gallery">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+        <input type="text" id="thisistheband" style="display:none;"name="" value="${band_name}">
+
+        <div id="events">
+
         </div>
+        <script>
+        function showEvents(){
+          var bandname = document.getElementById("thisistheband").value;
+        if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+        } else {  // code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function() {
+        if (this.readyState==4 && this.status==200) {
+        document.getElementById("events").innerHTML=this.responseText;
+        document.getElementById("events").style.border="1px solid #A5ACB2";
+        }
+        }
+
+        xmlhttp.open("GET","showBandEvents?name="+bandname,true);
+        xmlhttp.send();
+        }
+
+        </script>
+
     </section>
 
     <!-- jQuery -->

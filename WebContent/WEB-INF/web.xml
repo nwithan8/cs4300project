@@ -85,7 +85,7 @@
     <servlet-name>CreateVenue</servlet-name>
     <url-pattern>/CreateVenue</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <servlet-name>eventSignUp</servlet-name>
     <servlet-class>project.website.band.eventSignUp</servlet-class>
   </servlet>

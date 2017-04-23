@@ -247,7 +247,7 @@
                     <img src="https://placehold.it/600x400" class="center-block img-responsive">
                     <br>
                     <br>
-                    <div>
+                    <div style="display:none;">
                     <h1>Testing files</h1>
                    Id: <p id="id"></p><br>
                     Name: <p id ="name"></p><br>
@@ -423,150 +423,9 @@ function signUp(eventid){
 </div>
 </section>
 
-<section class="no-padding" id="gallery">
 
-</section>
 
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Details</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="service-box">
-                        <a href=""><i class="material-icons" style="font-size:60px;">date_range</i>
-                        <h3>Schedule</h3></a>
-                        <p class="text-muted">When are you available?</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="service-box">
-                        <a href=""><i class="material-icons" style="font-size:60px;">attach_money</i>
-                        <h3>Pricing</h3></a>
-                        <p class="text-muted">How much do you charge?</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="service-box">
-                        <a href=""><i class="material-icons" style="font-size:60px;">thumbs_up_down</i>
-                        <h3>Reviews</h3></a>
-                        <p class="text-muted">What do other people think?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="no-padding" id="gallery">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Gallery</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row no-gutter popup-gallery">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="" class="portfolio-box">
-                        <img src="http://placehold.it/650x350" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Concert Date
-                                </div>
-                                <div class="project-name">
-                                    Location
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
