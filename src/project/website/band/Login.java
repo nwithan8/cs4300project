@@ -170,6 +170,8 @@ public class Login extends HttpServlet {
 			request.setAttribute("facebook", thevenue.getFacebook());
 			request.setAttribute("twitter", thevenue.getTwitter());
 			request.setAttribute("youtube", thevenue.getYoutube());
+			request.setAttribute("username", thevenue.getVenue_name());
+			request.setAttribute("userID", id);
 			request.getRequestDispatcher("./Venue.ftl").forward(request, response);//forwards the request
 			
 		}else if(id<2000000){
@@ -189,6 +191,8 @@ public class Login extends HttpServlet {
 			request.setAttribute("twitter", theband.getTwitter());
 			request.setAttribute("youtube", theband.getYoutube());
 			request.setAttribute("soundcloud", theband.getSoundcloud());
+			request.setAttribute("username", theband.getName());
+			request.setAttribute("userID", id);
 			request.getRequestDispatcher("./Band.ftl").forward(request, response);//forwards the request
 			
 		}else{

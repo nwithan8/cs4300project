@@ -39,6 +39,19 @@
 
 
   <body id="page-top"onload="movethem()" style="background-color:none;">
+    <input type="text" name="name"style="display: none;" id="ourname" name="" value="${(username)! "null"}">
+  <input type="text" name="userID" style="display: none;" id="ouruserID" name="" value="${(userID)! "null"}">
+
+
+  <script type="text/javascript">
+    var val = document.getElementById("ourname").value;
+    var idval = document.getElementById("ouruserID").value;
+    if(val != "null"){
+      localStorage.setItem("name", "${(username)!}");
+      localStorage.setItem("userID", "${(userID)!}");
+      localStorage.setItem("accountType", "venue");
+    }
+  </script>
       <style>
           #searchradiobuttons {
               display: none;

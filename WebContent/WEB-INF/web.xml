@@ -85,6 +85,14 @@
     <servlet-name>CreateVenue</servlet-name>
     <url-pattern>/CreateVenue</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <servlet-name>eventSignUp</servlet-name>
+    <servlet-class>project.website.band.eventSignUp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>eventSignUp</servlet-name>
+    <url-pattern>/eventSignUp</url-pattern>
+  </servlet-mapping>
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>FreeMarker MVC Views</web-resource-name>

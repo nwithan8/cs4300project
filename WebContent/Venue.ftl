@@ -38,7 +38,20 @@
 </head>
 
 
-  <body id="page-top"onload="movethem()" style="background-color:none;">
+  <body id="page-top" onload="movethem()" style="background-color:none;">
+  <input type="text" name="name"style="display: none;" id="ourname" name="" value="${(username)! "null"}">
+<input type="text" name="userID" style="display: none;" id="ouruserID" name="" value="${(userID)! "null"}">
+
+
+<script type="text/javascript">
+  var val = document.getElementById("ourname").value;
+  var idval = document.getElementById("ouruserID").value;
+  if(val != "null"){
+    localStorage.setItem("name", "${(username)!}");
+    localStorage.setItem("userID", "${(userID)!}");
+    localStorage.setItem("accountType", "venue");
+  }
+</script>
       <style>
           #searchradiobuttons {
               display: none;
@@ -238,6 +251,7 @@
                     <h1>Testing files</h1>
                    Id: <p id="id"></p><br>
                     Name: <p id ="name"></p><br>
+                    userType: <p id = "usatype"></p><br>
                     </div>
                     <script>
 // Check browser support
@@ -245,9 +259,11 @@ if (typeof(Storage) !== "undefined") {
     // Store
   var id =  localStorage.getItem("userID");
    var name =  localStorage.getItem("name");
+   var usatype = localStorage.getItem("userType");
     // Retrieve
    document.getElementById("id").innerHTML += id;
     document.getElementById("name").innerHTML += name;
+    document.getElementById("usatype").innerHTML+=usatype;
 }
 </script>
                     <h2 class="section-heading" id="thevenuename"name="bandname">${venue_name}</h2>
@@ -278,7 +294,7 @@ var i=0;
   }
   }
 </script>
-                    <a href="./CreateVenueEvent.html"><button type="button"class= "btn btn-default btn-xl" style="background-color:#175411; color:white; font-size:60px; padding-top:none;" onclick="./CreateVenueEvent.html"name="button">Create An Event</button></a>
+                    <button type="button"class= "btn btn-default btn-xl" onclick="checkUser();" style="background-color:#175411; color:white; font-size:60px; padding-top:none;" name="button">Create An Event</button>
 
                     <form name="postform" id="hiddenform" style="display:none;"class="" action="./PostToFeed" method="post">
                       <br>
@@ -292,6 +308,17 @@ var i=0;
         </div>
     </section>
     <script type="text/javascript">
+
+    function checkUser(){
+      var clicker = localStorage.getItem("name");
+      var pagename = document.getElementById("thisisthevenue").value;
+      alert("your account name:"+clicker+" owner of the page:"+pagename);
+      if(clicker != pagename){
+        alert("Only The Profile Owner Can Create An Event!");
+      }else{
+        window.location = "./CreateVenueEvent.html";
+      }
+    }
 function artist(){
 var a=document.getElementById("artist").value;
 document.getElementById("myartist").innerHTML=a;
@@ -301,22 +328,33 @@ return false;
 document.getElementById("but").style.visibility='hidden';
 }
 </script>
+<div class="container">
+<div class="row">
+<div class="col-lg-12 text-center">
+    <h2 class="section-heading">Events!</h2>
+    <hr class="primary">
+</div>
+</div>
+
+</div>
+<center>
+<button type="button"class="btn btn-default btn-xl" onclick="showEvents();"name="button">Show Events</button>
+</center>
 <div id="events">
-
-
+<!--
     <form action="./CreateEventVenue" method="get">
         <table>
 <tr>
 <td>Name:</td>
-<td style="color: black;">${(name)! "No Events Created!"}</td>
+<td style="color: white;">${(name)! "No Events Created!"}</td>
 </tr>
 <tr>
 <td>Date: </td>
-<td style="color: black;">${(date)!}</td>
+<td style="color: white;">${(date)!}</td>
 </tr>
 <tr>
 <td>Preferred Genre: </td>
-<td style="color: black;">${(genre)!}</td>
+<td style="color: white;">${(genre)!}</td>
 </tr>
 <tr>
 <td>Description: </td>
@@ -327,18 +365,14 @@ document.getElementById("but").style.visibility='hidden';
 Artist: <input type="text" name="artist" id="artist"/>
 <div id="myartist"></div>
 <input type="button" value="Submit" id="but" onclick="artist()"/>
+-->
 </div>
 
 
-
+<input type="text" id="thisisthevenue" style="display:none;"name="" value="${venue_name}">
 <script>
-
-function showResult(str) {
-if (str.length==0) {
-document.getElementById("events").innerHTML="";
-document.getElementById("events").style.border="0px";
-return;
-}
+function showEvents(){
+  var venname = document.getElementById("thisisthevenue").value;
 if (window.XMLHttpRequest) {
 // code for IE7+, Firefox, Chrome, Opera, Safari
 xmlhttp=new XMLHttpRequest();
@@ -352,25 +386,45 @@ document.getElementById("events").style.border="1px solid #A5ACB2";
 }
 }
 
-xmlhttp.open("GET","showEvents?name="+document.getElementById("thevenuename").innerHTML,true);
+xmlhttp.open("GET","showEvents?name="+venname,true);
 xmlhttp.send();
 }
+
 </script>
+<script type="text/javascript">
+
+function signUp(eventid){
+  var userid = parseInt(localStorage.getItem("userID"));
+  if(userid>=2000000){
+    alert("Your account is registered to a venue! Venues cannot sign up for events!");
+    return;
+  }
+  if (window.XMLHttpRequest) {
+  // code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+  if (this.readyState==4 && this.status==200) {
+  document.getElementById("events").innerHTML=this.responseText;
+  document.getElementById("events").style.border="1px solid #A5ACB2";
+  }
+  }
+
+  xmlhttp.open("GET","eventSignUp?eventid="+eventid+"&bandid="+userid,true);
+  xmlhttp.send();
+  alert("Congrats! You've Signed up to perform at this Event! Contact the venue for further details!");
+}
+</script>
+
 </div>
 </div>
 </div>
 </section>
 
 <section class="no-padding" id="gallery">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 text-center">
-    <h2 class="section-heading">Events!</h2>
-    <hr class="primary">
-</div>
-</div>
 
-</div>
 </section>
 
     <section id="services">

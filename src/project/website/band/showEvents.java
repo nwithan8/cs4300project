@@ -30,30 +30,50 @@ public class showEvents extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String venuename = request.getParameter("name");
+		System.out.println("Name of venue querying events for is... "+ venuename);
 		String Response=""; 
-		Vector<event> eventvector = new Vector<event>();
+		Vector <event> eventvector = DBinteract.getEventsByVenueName(venuename);
+		Vector <String> applicants = new Vector<String>();
 		
 		for(int i = 0; i<eventvector.size(); i++){
-		
-	Response+= "   <form action=\"./CreateEventVenue\" method=\"get\">";
-       Response+= "<table>";
+			applicants = DBinteract.getApplicantsByEventID(eventvector.get(i).getId());
+			
+			Response +="<center><h2 style='color:white;'>Event Number "+(i+1)+"</h2><br>";
+	Response+= " <form style='color:white'action='' method='get'><br><br>";
+       Response+= "<table style='border: 3px solid #224730'>";
 Response+="      <tr>";
-Response+="<td>Name:</td>";
-Response+="<td style=\"color: black;\">"+eventvector.get(i).title+"</td>";
+Response+="<td style='color: white;'>Name:</td>";
+Response+="<td style='color: white;'>"+eventvector.get(i).getTitle()+"</td>";
 Response+="</tr>";
 Response+="<tr>";
-Response+="<td>Date: </td>";
-Response+="<td style=\"color: black;\">"+eventvector.get(i).timeandplace+"</td>";
+Response+="<td style='color: white;'>Date: </td>";
+Response+="<td style='color: white;'>"+eventvector.get(i).getTimeandplace()+"</td>";
 Response+="</tr>";
 Response+="<tr>";
-Response+="<td>Description: </td>";
-Response+="<td style=\"color: black;\">"+eventvector.get(i).description+"</td>";
+Response+="<td style='color: white;'>Description: </td>";
+Response+="<td style='color: white;'>"+eventvector.get(i).getDescription()+"</td>";
+
 Response+="</tr>";
+Response+="<tr>";
+Response+="<td style='color: white;'>Applicant List: </td>";
+
+Response+="</tr>";
+
+
+for(int z = 0; z<applicants.size(); z++){
+	Response+="<trstyle='text-align:center'>";
+	Response+="<td style='color: red;'>"+applicants.get(z)+" </td>";
+	Response+="</tr>";
+
+	
+}
 Response+="</table>";
+Response+="Artist: <input type='text' name='artist' id='artist"+i+"'/>";
+Response+="<div id='myartist"+i+"'></div>";
 Response+= "   </form>";
-Response+="Artist: <input type=\"text\" name=\"artist\" id=\"artist"+i+"\"/>";
-Response+="<div id=\"myartist"+i+"\"></div>";
-Response+="<input type=\"button\" value=\"Submit\" id=\"but"+i+"\" onclick=\"artist()\"/>";
+
+Response+="<button value='Sign Up!' id='but"+i+"' onclick='signUp("+eventvector.get(i).getId()+");'>Sign Up!</button></center>";
+
 		}
 		response.getWriter().write(Response);
 

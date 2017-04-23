@@ -224,6 +224,25 @@ public class DBinteract{
 		}
 		return eventapps;
 	}
+	
+	public static Vector<String> getApplicantsByEventID(int eventid){
+		Vector<String> applicantlist = new Vector<String>();
+		String query = "Select band_name from band join applications ON applications.band_id = band.id  AND applications.event_id ="+eventid+";";
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		try {
+			
+			while(rs.next()){
+				applicantlist.add(rs.getString(1));
+
+			}
+			
+		} catch (SQLException e) {
+			return null;
+		}
+			return applicantlist;
+		
+		
+	}
 	public static Vector<event> getEvents(){
 		Vector<event> currEvents = new Vector<event>();
 		String query = "SELECT * FROM events";
@@ -244,7 +263,7 @@ public class DBinteract{
 	}
 	public static Vector<event> getEventsByVenue(int venue_id){
 		Vector<event> currEvents = new Vector<event>();
-		String query = "SELECT * FROM events WHERE venue_id = " + venue_id;
+		String query = "SELECT * FROM events WHERE venue_id = " + venue_id+";";
 		ResultSet rs = DatabaseAccessInterface.retrieve(query);
 		try {
 			
@@ -252,6 +271,7 @@ public class DBinteract{
 				boolean curr = false;
 				if(rs.getInt(5) == 1)curr = true;
 				event evnt = new event(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4), curr, rs.getInt(6),rs.getString(7));
+				System.out.println("Added event titled : "+ evnt.getTitle());
 				currEvents.add(evnt);
 			}
 			
@@ -379,6 +399,24 @@ public class DBinteract{
 		return theVenue;
 		
 	}
+	public static Vector<event> getEventsByVenueName(String venue_name){
+		int id = -1;
+		String query = "SELECT * FROM venue WHERE venue_name = '" + venue_name + "';";
+		ResultSet rs = DatabaseAccessInterface.retrieve(query);
+		try {
+			
+			while(rs.next()){
+				id = rs.getInt(1);
+				System.out.println("Found venue with matching ID");
+			}
+			
+		} catch (SQLException e) {
+			return null;
+		}
+		Vector<event> events = getEventsByVenue(id);
+		return events;
+	}
+	
 	public static Vector<event> getEventsByBand(int band_id){
 		Vector<event> currEvents = new Vector<event>();
 		String query = "SELECT * FROM events WHERE band_id = " + band_id;
