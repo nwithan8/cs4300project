@@ -262,15 +262,15 @@ function showResult(str) {
     <br/>
     <h1 class="messages">My Inbox</h1>
     <br/>
-    <form name = "inboxContents" method="get">
-    <p class="content">Recipient:<input type="text" id="recipient" name="recipient" class="cont"/></p><br/>
+    <form name = "inboxContents" action="./inboxContents" method="get">
+    <p class="content">Recipient:<input type="text" id="recipient_name" name="recipient" class="cont"/></p><br/>
     <p class="content">Title:<input type="text" id="title" name="title" class="cont"/></p><br/>
     <p class ="content">Time:
-    <span id="date"></span>
+    <input id="date">
     </p>
     
 <p class="content">Content:<br/>
-<textarea rows="10" cols="100" style="color:black" form="inboxContents" name="contents"></textarea>
+<textarea rows="10" cols="100" style="color:black" form="inboxContents"  name="contents"></textarea>
     </p>
 	    <a href="Inbox.html"><input type="submit" value="Send" class="btn"/></a>
     <input type="hidden" id="sender_id" name="sender_id" style="disply:none"/>
@@ -302,7 +302,7 @@ function showResult(str) {
 	if (thour<10) { thour="0"+thour; }
 	
 	today = days[now.getDay()] + ", " + date + " " + months[now.getMonth()] + ", " + (fourdigits(now.getYear())) + " - " + thour + ":" + tmin +":"+ tsec;
-	document.getElementById("date").innerHTML = today;
+	document.getElementById("date").value = today;
 }
 setInterval("showDate()", 1000);
 </script>
