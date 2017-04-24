@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="css/creative.css">
    <link href="css/creative.min.css" rel="stylesheet">
    <script src="js/animate.js"></script>
     <meta charset="utf-8">
@@ -12,28 +13,7 @@
 
     <title>EasyGig</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-    <!-- Theme CSS -->
-    <link href="css/creative.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -53,76 +33,7 @@
     }
   </script>
       <style>
-          #searchradiobuttons {
-              display: none;
-          }
 
-          #b1,
-          #b3,
-          #b5,
-          #b7,
-          #b9,
-          #b11,
-          #b13,
-          #b15,
-          #b17,
-          #b19,
-          #b21,
-          #b23,
-          #b25,
-          #b27,
-          #b29{
-              background-color: #132e1d;
-              opacity: .5;
-          }
-
-          #b2,
-          #b4,
-          #b6,
-          #b8,
-          #b10,
-          #b12,
-          #b14,
-          #b16,
-          #b18,
-          #b20,
-          #b22,
-          #b24,
-          #b26,
-          #b28,
-          #b30{
-              background-color: #224730;
-              opacity: .5;
-          }
-
-          #bars {
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              left: 0px;
-              top: 0px;
-              z-index: -1;
-          }
-
-          #bartable {
-              width: 100%;
-              height: 100%;
-          }
-
-          #bartable td {
-              padding: 1px;
-              vertical-align: bottom;
-          }
-
-          #background {
-              position: absolute;
-              left: 0px;
-              top: 0px;
-              z-index: -2;
-              width: 100%;
-              height: 100%;
-              background-image: url(img/header2small.jpg)
-          }
       </style>
 
        <nav class="nav">
@@ -364,13 +275,9 @@ var i=0;
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
