@@ -263,11 +263,21 @@ function showResult(str) {
     <h1 class="messages">My Inbox</h1>
     <br/>
     <form name = "inboxContents" id="inboxContents" action="./createMessage" method="get">
-    <p class="content">Recipient:<input type="text" id="recipient_name" name="recipient_name" class="cont"/></p><br/>
-    <p class="content">Title:<input type="text" id="title" name="title" class="cont"/></p><br/>
-    <p class ="content">Time:
-    <input id="date">
-    </p>
+    <table align="center">
+            <tr>
+                <td style="color:white">
+                Recipient:</td>
+                <td><input type="text" id="recipient" name="recipient" class="cont"/></td>            </tr>
+       <tr>
+           <td style="color:white">Title:</td><td><input type="text" id="title" name="title" class="cont"/></td>
+            </tr>
+            <tr>
+           <td style="color:white">Time:</td>
+           <td>
+    <input id="date" style="color:white">
+           </td>
+            </tr>
+        </table>
     
 <p class="content">Content:<br/>
 <textarea rows="10" cols="100" style="color:black" id = "contents" form="inboxContents"  name="contents"></textarea>
