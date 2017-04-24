@@ -6,6 +6,18 @@ html{
     background-color: black;
     width: auto;
 }
+.content{
+    color:white;
+    text-align: center;
+}
+.inbox{
+    text-align: center;
+    text-decoration: underline;
+    color: white;    
+}
+
+
+
 #title{
     float: left;
     padding: 10px;
