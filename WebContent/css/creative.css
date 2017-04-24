@@ -181,9 +181,6 @@ input.radio {
     display: inline;
 }
 
-input[list] {
-    background: red;
-}
 
 .search {
     position: relative;
