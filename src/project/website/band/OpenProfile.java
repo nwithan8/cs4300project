@@ -34,7 +34,7 @@ public class OpenProfile extends HttpServlet {
 		// TODO Auto-generated method stub
 		String name = request.getParameter("search");
 		String type = request.getParameter("typeofsearch");
-		
+		System.out.println("Opening profile of type "+ type + " with name of "+ name);
 		if(type.equals("band")){
 		Band theband = new Band();
 		

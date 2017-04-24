@@ -38,7 +38,7 @@
     
 </head>
 
-<body id="page-top"onload="movethem()" style="background-color:none;">
+<body id="page-top"onload="showDate();" style="background-color:none;">
     <style>
         #searchradiobuttons {
             display: none;
@@ -262,24 +262,26 @@ function showResult(str) {
     <br/>
     <h1 class="messages">My Inbox</h1>
     <br/>
-    <form name = "inboxContents" action="./inboxContents" method="get">
-    <p class="content">Recipient:<input type="text" id="recipient_name" name="recipient" class="cont"/></p><br/>
+    <form name = "inboxContents" id="inboxContents" action="./createMessage" method="get">
+    <p class="content">Recipient:<input type="text" id="recipient_name" name="recipient_name" class="cont"/></p><br/>
     <p class="content">Title:<input type="text" id="title" name="title" class="cont"/></p><br/>
     <p class ="content">Time:
     <input id="date">
     </p>
     
 <p class="content">Content:<br/>
-<textarea rows="10" cols="100" style="color:black" form="inboxContents"  name="contents"></textarea>
+<textarea rows="10" cols="100" style="color:black" id = "contents" form="inboxContents"  name="contents"></textarea>
     </p>
-	    <a href="Inbox.html"><input type="submit" value="Send" class="btn"/></a>
+	    <input type="submit" value="Send" class="btn"/>
     <input type="hidden" id="sender_id" name="sender_id" style="disply:none"/>
     <input type="hidden"  id="sender_name" name="sender_name" style="display:none"/>
+    <input type="hidden"  id="user_type" name="user_type" style="display:none"/>
+    
         
     </form>
     <script>
         document.getElementById("sender_id").value=localStorage.getItem("userID");
-        document.getElementById("sender_name").value=localStorage.getItem("username");
+        document.getElementById("sender_name").value=localStorage.getItem("name");
         
     function showDate()
 {
@@ -287,6 +289,13 @@ function showResult(str) {
 	var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
 	var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
 	var date = ((now.getDate()<10) ? "0" : "")+ now.getDate();
+	var usertype = parseInt(localStorage.getItem("userID"));
+	if(usertype >=2000000){
+	document.getElementById("user_type").value = "venue";
+	}else{
+		document.getElementById("user_type").value = "band";
+		
+		}
 	function fourdigits(number)
 	{
 		return (number < 1000) ? number + 1900 : number;

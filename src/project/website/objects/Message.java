@@ -61,24 +61,23 @@ public void setTime_sent(String time_sent) {
 public String getHTML(){
 String Response="";
 Response +="<center><h2 style='color:white;'> Message</h2><br>";
-Response+= " <form style='color:white'action='' method='get'><br><br>";
-Response+= "<table style='border: 3px solid #224730'>";
+Response+= "<table style='background-color:gray; border-radius:20px;padding:10px;border: 3px solid #224730;'>";
 Response+="      <tr>";
-Response+="<td style='color: white;'>Sender:</td>";
-Response+="<td style='color: white;'>"+this.getSender_name()+"</td>";
-Response+="</tr>";
+Response+="<td style='border: 2px solid black;color:white;font-weight:bold;border-radius:10px; padding:5px;'>Sender:</td>";
+Response+="<td style='color: black;'>"+this.getSender_name()+"</td>";
+Response+="</tr>  " ;
 Response+="<tr>";
-Response+="<td style='color: white;'>Date Sent: </td>";
-Response+="<td style='color: white;'>"+this.getTime_sent()+"</td>";
-Response+="</tr>";
+Response+="<td style='border: 2px solid black;color:white;font-weight:bold;border-radius:10px; padding:5px;'>Date Sent: </td>";
+Response+="<td style='color: black;'>"+this.getTime_sent()+"</td>";
+Response+="</tr>      ";
 Response+="<tr>";
-Response+="<td style='color: white;'>Title: </td>";
-Response+="<td style='color: white;'>"+this.getTitle()+"</td>";
+Response+="<td style='border: 2px solid black;color:white;font-weight:bold;border-radius:10px; padding:5px;'>Title: </td>";
+Response+="<td style='color: black;'>"+this.getTitle()+"</td>";
 
-Response+="</tr>";
+Response+="</tr>     ";
 Response+="<tr>";
-Response+="<td style='color: white;'>Contents: </td>";
-Response+="<td style='color: white;'>"+this.getContents()+"</td>";
+Response+="<td style='border: 2px solid black;color:white;font-weight:bold;border-radius:10px; padding:5px;'>Contents: </td>";
+Response+="<td style='color: black;'><pre>"+this.getContents()+"</pre></td>";
 
 Response+="</tr>";
 

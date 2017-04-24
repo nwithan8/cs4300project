@@ -93,6 +93,22 @@
     <servlet-name>eventSignUp</servlet-name>
     <url-pattern>/eventSignUp</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <servlet-name>inboxContents</servlet-name>
+    <servlet-class>project.website.messenger.inboxContents</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>inboxContents</servlet-name>
+    <url-pattern>/inboxContents</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>createMessage</servlet-name>
+    <servlet-class>project.website.messenger.createMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>createMessage</servlet-name>
+    <url-pattern>/createMessage</url-pattern>
+  </servlet-mapping>
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>FreeMarker MVC Views</web-resource-name>

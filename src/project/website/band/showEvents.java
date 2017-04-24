@@ -62,7 +62,7 @@ Response+="</tr>";
 
 for(int z = 0; z<applicants.size(); z++){
 	Response+="<trstyle='text-align:center'>";
-	Response+="<td style='color: red;'>"+applicants.get(z)+" </td>";
+	Response+="<td style='color: red;'><form action='./OpenProfile' method='get'><input type='submit' style='background-color:none;'value='"+applicants.get(z)+"'><input type='text' name='search' value='"+applicants.get(z)+"' style='display:none;'><input type='text' name='typeofsearch' value='band' style='display:none;'> </form></td>";
 	Response+="</tr>";
 
 	

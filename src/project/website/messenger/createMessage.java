@@ -2,6 +2,8 @@ package project.website.messenger;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -47,33 +49,23 @@ public class createMessage extends HttpServlet {
 		Band theband = new Band();
 		Venue thevenue = new Venue();
 		
-		String userType = request.getParameter("user_type");
-		String sender_id=request.getParameter("sender_id");
-		String recipient_name=request.getParameter("recipient_name");
-		String sender_name=request.getParameter("sender_name");
-		String timesent = request.getParameter("time_sent");
-		String title = request.getParameter("title");
-		String contents = request.getParameter("contents");
-		String recipient_id = "";
-		if(userType.equals("band")){
-			try {
-				theband = DBinteract.getBandInfo(recipient_name);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			recipient_id = Integer.toString(theband.getId());
-			
-		}else if(userType.equals("venue")){
-			try {
-				thevenue = DBinteract.getVenueInfo(recipient_name);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			recipient_id = Integer.toString(thevenue.getId());
-
+		String userType = request.getParameter("user_type");//good
+		String sender_id=request.getParameter("sender_id");//good
+		String recipient_name=request.getParameter("recipient_name");//good
+		String sender_name=request.getParameter("sender_name");//good
+		String timesent = new SimpleDateFormat("dd-MM-yyyy").format(new Date());//good
+		String title = request.getParameter("title");//good
+		String contents = request.getParameter("contents");//good
+		String recipient_id="";
+		try {
+			System.out.println("now searching for id for username:" + recipient_name);
+			recipient_id = DBinteract.getUserIdByName(recipient_name);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
+		System.out.println("The type of user you are sending this message to is..."+ userType);
+	
 		
 		DBinteract.createMessage(sender_name, sender_id, recipient_name, recipient_id, title, contents, timesent);
 

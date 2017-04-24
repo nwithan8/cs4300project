@@ -15,7 +15,7 @@ import project.website.objects.Venue;
 public class DBinteract{
 	public static Vector<project.website.objects.Message> getMessages(String username) throws SQLException{
 		Vector<project.website.objects.Message> messageVector = new Vector <project.website.objects.Message>();
-		String query = "Select * from messages where recipient_name ="+username;
+		String query = "Select * from messages where recipient_name ='"+username+"';";
 		ResultSet rs = DatabaseAccessInterface.retrieve(query);
 		while(rs.next()){
 			project.website.objects.Message newMessage = new project.website.objects.Message();
@@ -32,12 +32,40 @@ public class DBinteract{
 		return messageVector;
 		
 	}
+	public static String getUserIdByName(String name) throws SQLException{
+		String userId = "";
+		String queryone = "Select id from band where band_name= '"+name+"';";
+		String querytwo = "Select id from venue where venue_name= '"+name+"';";
+		
+		ResultSet rs1 = DatabaseAccessInterface.retrieve(queryone);
+		if(!rs1.next()){
+			System.out.println("No id found in band for user:" + name+" now searching in venue" );
+
+			ResultSet rs2 = DatabaseAccessInterface.retrieve(querytwo);
+
+			while(rs2.next()){
+				
+				userId = Integer.toString(rs2.getInt("id"));
+				break;
+			}
+		}else{
+	
+
+			userId = Integer.toString(rs1.getInt("id"));
+			System.out.println("User Id found for band:" + name+" is "+userId );
+
+
+		}
+
+		return userId;
+		
+	}
 	public static int createMessage (String sender_name, String sender_id, String recipient_name, String recipient_id, String title, String contents, String timesent){
 		int z = 0;
 		String query = "INSERT INTO messages values (";
-		query +="null" + ", '" + sender_name + "','" + recipient_name + "'," + sender_id + "," + recipient_id + "," + title;
+		query +="null" + ", '" + sender_name + "','" + recipient_name + "'," + sender_id + "," + recipient_id + ",'" + title;
 		//,"here is a message","1-1-2017");";
-		query += ",'" + contents + "','" + timesent + "');"; 
+		query += "','" + contents + "','" + timesent + "');"; 
 		System.out.println(query);
 		z =  DatabaseAccessInterface.create(query);
 		return z;
@@ -401,6 +429,7 @@ public class DBinteract{
 			String twitter=rs.getString("twitter");
 			String youtube=rs.getString("youtube");
 			theVenue.setId(Integer.parseInt(id));
+			System.out.println("The Id of the venue "+venue_name+" is "+theVenue.getId());
 			theVenue.setVenue_name(venue_name);
 			theVenue.setDescription(description);
 			theVenue.setTelephone(telephone);
