@@ -3,6 +3,7 @@
 
 <head>
     <link href="css/creative.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="js/animate.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -231,6 +232,47 @@
               </div>
               <div id="background"></div>
       </header>
+      
+      $(document).ready(function () {
+
+    $('#myform').validate({ // initialize the plugin
+        rules: {
+            bandname: {
+                required: true,
+                minlength: 5
+            }
+            email: {
+                required: true,
+                email: true
+            }
+            description: {
+                required: true,
+                minlength: 5
+            }
+            phonenumber: {
+                required: true,
+                phoneUS: true
+            },
+            facebook: {
+                required: true,
+                minlength: 5
+            }
+            twitter: {
+                required: true,
+                minlength: 5
+            }
+            soundcloud: {
+                required: true,
+                minlength: 5
+            }
+            youtube: {
+                required: true,
+                minlength: 5
+            }
+        }
+    });
+
+});
 
     <section class="bg-primary" id="about">
         <div class="container">
@@ -240,9 +282,9 @@
                   <br>
                   <form id="postform" action="./CreateBand" method="post" style="font-size:18px; text-align:left;">
 
-                      <input style="display:none;"type="text"name="bandname" value="${bandname}">
-                      <input style="display:none;"type="text"name="email" value="${email}">
-                      <input style="display:none;"type="text"name="description" value="${description}">
+                      <input style="display:none;"type="text"name="bandname" value="${bandname}" required>
+                      <input style="display:none;"type="text"name="email" value="${email}" required>
+                      <input style="display:none;"type="text"name="description" value="${description}" required>
 <script>
 // Check browser support
 
@@ -294,7 +336,7 @@ if (typeof(Storage) !== "undefined") {
                                   <p>Facebook</p>
                               </td>
                               <td>
-                                  <input type="url" name="facebook" style="color:grey; width:70%; margin-bottom:10px;">
+                                  <input type="url" name="facebook" style="color:grey; width:70%; margin-bottom:10px;" required>
                               </td>
                          </tr>
                          <tr>
@@ -310,7 +352,7 @@ if (typeof(Storage) !== "undefined") {
                                   <p>SoundCloud</p>
                               </td>
                               <td>
-                                  <input type="url" name="soundcloud" style="color:grey; width:70%; margin-bottom:10px;">
+                                  <input type="url" name="soundcloud" style="color:grey; width:70%; margin-bottom:10px;" required>
                               </td>
                          </tr>
                          <tr>
@@ -318,13 +360,8 @@ if (typeof(Storage) !== "undefined") {
                                   <p>YouTube</p>
                               </td>
                               <td>
-                                  <input type="url" name="youtube" style="color:grey; width:70%; margin-bottom:10px;">
+                                  <input type="url" name="youtube" style="color:grey; width:70%; margin-bottom:10px;" required>
                               </td>
-                         </tr>
-                         <tr>
-                              <td>
-                                  <p style="font-size:12px;">*Required</p>
-                             </td>
                          </tr>
                       </table>
                       <br>

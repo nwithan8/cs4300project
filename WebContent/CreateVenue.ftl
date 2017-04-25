@@ -37,9 +37,45 @@
 
 </head>
 
-<body id="page-top">
-
   <body id="page-top"onload="movethem()" style="background-color:none;">
+  
+        $(document).ready(function () {
+
+    $('#myform').validate({ // initialize the plugin
+        rules: {
+            venuename: {
+                required: true,
+                minlength: 5
+            }
+            email: {
+                required: true,
+                email: true
+            }
+            description: {
+                required: true,
+                minlength: 5
+            }
+            phonenumber: {
+                required: true,
+                phoneUS: true
+            },
+            facebook: {
+                required: true,
+                minlength: 5
+            }
+            twitter: {
+                required: true,
+                minlength: 5
+            }
+            youtube: {
+                required: true,
+                minlength: 5
+            }
+        }
+    });
+
+});
+  
       <style>
           #searchradiobuttons {
               display: none;
@@ -241,9 +277,9 @@
                   <br>
                   <form id="postform" action="./CreateVenue" method="post" style="font-size:18px; text-align:left;">
 
-                      <input style="display:none;"type="text"name="venuename" value="${venuename}">
-                      <input style="display:none;"type="text"name="email" value="${email}">
-                      <input style="display:none;"type="text"name="description" value="${description}">
+                      <input style="display:none;"type="text"name="venuename" value="${venuename}" required>
+                      <input style="display:none;"type="text"name="email" value="${email}" required>
+                      <input style="display:none;"type="text"name="description" value="${description}" required>
 <script>
 // Check browser support
 
@@ -289,7 +325,7 @@ if (typeof(Storage) !== "undefined") {
                                   <p>Facebook</p>
                               </td>
                               <td>
-                                  <input type="url" name="facebook" style="color:grey; width:70%; margin-bottom:10px;">
+                                  <input type="url" name="facebook" style="color:grey; width:70%; margin-bottom:10px;" required>
                               </td>
                          </tr>
                          <tr>
@@ -297,7 +333,7 @@ if (typeof(Storage) !== "undefined") {
                                   <p>Twitter</p>
                               </td>
                               <td>
-                                  <input type="url" name="twitter" style="color:grey; width:70%; margin-bottom:10px;">
+                                  <input type="url" name="twitter" style="color:grey; width:70%; margin-bottom:10px;" required>
                               </td>
                          </tr>
 
@@ -306,13 +342,8 @@ if (typeof(Storage) !== "undefined") {
                                   <p>YouTube</p>
                               </td>
                               <td>
-                                  <input type="url" name="youtube" style="color:grey; width:70%; margin-bottom:10px;">
+                                  <input type="url" name="youtube" style="color:grey; width:70%; margin-bottom:10px;" required>
                               </td>
-                         </tr>
-                         <tr>
-                              <td>
-                                  <p style="font-size:12px;">*Required</p>
-                             </td>
                          </tr>
                       </table>
                       <br>
