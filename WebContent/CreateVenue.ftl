@@ -294,7 +294,7 @@ if (typeof(Storage) !== "undefined") {
 
 
                          <tr>
-                              <td>
+                              <td style="color:white">
                                   <b>Contact:</b>
                               </td>
                               <td>
@@ -302,16 +302,16 @@ if (typeof(Storage) !== "undefined") {
                          </tr>
 
                          <tr>
-                              <td>
+                              <td style="color:white">
                                   <p>Telephone*</p>
                               </td>
                               <td>
-                                  <input type="text" name="phonenumber" style="color:grey; width:70%; margin-bottom:10px;" required>
+                                  <input type="text" name="phonenumber" style="color:white; width:70%; margin-bottom:10px;" required>
                               </td>
                          </tr>
 
                          <tr>
-                              <td>
+                              <td style="color:white">
                                   <b>Social Media:</b>
                               </td>
                               <td>
@@ -322,7 +322,7 @@ if (typeof(Storage) !== "undefined") {
                                   <p>Facebook</p>
                               </td>
                               <td>
-                                  <input type="url" name="facebook" style="color:grey; width:70%; margin-bottom:10px;" required>
+                                  <input type="url" name="facebook" style="color:white; width:70%; margin-bottom:10px;" required>
                               </td>
                          </tr>
                          <tr>
@@ -330,7 +330,7 @@ if (typeof(Storage) !== "undefined") {
                                   <p>Twitter</p>
                               </td>
                               <td>
-                                  <input type="url" name="twitter" style="color:grey; width:70%; margin-bottom:10px;" required>
+                                  <input type="url" name="twitter" style="color:white; width:70%; margin-bottom:10px;" required>
                               </td>
                          </tr>
 
@@ -339,7 +339,7 @@ if (typeof(Storage) !== "undefined") {
                                   <p>YouTube</p>
                               </td>
                               <td>
-                                  <input type="url" name="youtube" style="color:grey; width:70%; margin-bottom:10px;" required>
+                                  <input type="url" name="youtube" style="color:white; width:70%; margin-bottom:10px;" required>
                               </td>
                          </tr>
                       </table>
