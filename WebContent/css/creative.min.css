@@ -6,11 +6,6 @@ html{
     background-color: black;
     width: auto;
 }
-
-.time1{
-    width: 275px;
-    text-align: center;
-}
 .cont{
     color: black;
     padding: inherit;
@@ -22,7 +17,18 @@ html{
     color: white;    
 }
 
+.content{
+    color: white;
+    text-align: center;
+}
 
+.messages{
+    text-align: center;
+}
+.time1{
+    width: 275px;
+    text-align: center;
+}
 
 #title{
     float: left;
