@@ -234,12 +234,12 @@
                     <h2 class="section-heading">Sign Up</h2>
                     <form action="./SignUp" id="theform" method="post"><br>
                         <input type="radio" name="bandorvenue" value="band" style="color:grey"><span style="color:white"> Artist or Band</span>
-                        <input type="radio" name="bandorvenue" value="venue" style="color:grey; margin-left:30px;"><span style="color:white">Venue</span> <br/>
-                        <input type="text" name="name" placeholder="Name of Band or Venue" style="color:grey; width:30%; margin-bottom:10px;"><br>
-                        <input type="text" name="email" placeholder="Email Address" style="color:grey; width:30%; margin-bottom:10px;"><br>
-                        <input type="text" name="username" placeholder="Username" style="color:grey; width:30%; margin-bottom:10px;"><br>
-                        <input type="text" name="password" placeholder="Password" style="color:grey; width:30%; margin-bottom:10px;"><br>
-                        <input type="text" name="passwordcheck" placeholder="Confirm Password" style="color:grey; width:30%; margin-bottom:10px;"><br>
+                        <input type="radio" name="bandorvenue" value="venue" style="color:white; margin-left:30px;" required><span style="color:white">Venue</span> <br/>
+                        <input type="text" name="name" placeholder="Name of Band or Venue" style="color:white; width:30%; margin-bottom:10px;" required><br>
+                        <input type="text" name="email" placeholder="Email Address" style="color:white; width:30%; margin-bottom:10px;" required><br>
+                        <input type="text" name="username" placeholder="Username" style="color:white; width:30%; margin-bottom:10px;" required><br>
+                        <input type="text" name="password" placeholder="Password" style="color:white; width:30%; margin-bottom:10px;" required><br>
+                        <input type="text" name="passwordcheck" placeholder="Confirm Password" style="color:white; width:30%; margin-bottom:10px;" required><br>
                         <textarea cols="50" rows="4" name="description" placeholder = "describe your band or venue" form="theform"></textarea><br>
                         <input type=submit value="Sign Up" class="btn btn-default sr-button" style="font-size:20px"><br><br>
                     </form>
