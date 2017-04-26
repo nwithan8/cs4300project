@@ -31,8 +31,34 @@ public class livesearch extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		DBinteract database = new DBinteract();
+		String searchresultsstuff = null;
 		String search = request.getParameter("q");
 		String searchType = request.getParameter("searchtype");
+		if(searchType.equals("all")){
+			Vector<String> searchresults = null;
+			searchType="band";
+			try {
+				searchresults = DBinteract.getSearchResults(search,searchType);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			searchresultsstuff += "SEARCH RESULTS <br>";
+			for(int i = 0; i<searchresults.size(); i++){
+				searchresultsstuff+="<input type='button' style='background:transparent; border:none; font-size:15pt;' value='"+searchresults.get(i)+"' onclick=\"changeResults(this.value);\" >"+ "<br>";
+			}
+			searchType="venue";
+			try {
+				searchresults = DBinteract.getSearchResults(search,searchType);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			for(int i = 0; i<searchresults.size(); i++){
+				searchresultsstuff+="<input type='button' style='background:transparent; border:none; font-size:15pt;' value='"+searchresults.get(i)+"' onclick=\"changeResults(this.value);\" >"+ "<br>";
+			}
+			
+		}else{
 		Vector<String> searchresults = null;
 		try {
 			searchresults = DBinteract.getSearchResults(search,searchType);
@@ -40,9 +66,10 @@ public class livesearch extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String searchresultsstuff = "SEARCH RESULTS <br>";
+		searchresultsstuff = "SEARCH RESULTS <br>";
 		for(int i = 0; i<searchresults.size(); i++){
 			searchresultsstuff+="<input type='button' style='background:transparent; border:none; font-size:15pt;' value='"+searchresults.get(i)+"' onclick=\"changeResults(this.value);\" >"+ "<br>";
+		}
 		}
 		response.getWriter().write(searchresultsstuff);
 	}

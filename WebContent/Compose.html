@@ -11,6 +11,7 @@
     <meta name="author" content="">
 
     <title>EasyGig</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +36,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    
+
 </head>
 
 <body id="page-top"onload="showDate();" style="background-color:none;">
@@ -135,31 +136,7 @@
     <header style="height:250px;">
         <center>
 
-                <div id="livesearch"></div>
 
-                <script>
-function showResult(str) {
-  if (str.length==0) {
-    document.getElementById("livesearch").innerHTML="";
-    document.getElementById("livesearch").style.border="0px";
-    return;
-  }
-  if (window.XMLHttpRequest) {
-    // code for IE7+, Firefox, Chrome, Opera, Safari
-    xmlhttp=new XMLHttpRequest();
-  } else {  // code for IE6, IE5
-    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
-      document.getElementById("livesearch").innerHTML=this.responseText;
-      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
-    }
-  }
-  xmlhttp.open("GET","livesearch.java?q="+str,true);
-  xmlhttp.send();
-}
-</script>
         </center>
         <div id="bars">
                 <table id="bartable">
@@ -267,7 +244,9 @@ function showResult(str) {
             <tr>
                 <td style="color:white">
                 Recipient:</td>
-                <td><input type="text" id="recipient" name="recipient" class="cont"/></td>            </tr>
+                <td><input type="text" onkeyup="showResult(this.value);" id="recipient" name="recipient" class="cont"/><br><input type="text" style="display:none;" value="all" id="searchtype" name="searchtype" class="cont"/><div id="livesearch">
+
+                </div></td>            </tr>
        <tr>
            <td style="color:white">Title:</td><td><input type="text" id="title" name="title" class="cont"/></td>
             </tr>
@@ -278,7 +257,32 @@ function showResult(str) {
            </td>
             </tr>
         </table>
-    
+
+
+                        <script>
+        function showResult(str) {
+        	  if (str.length==0) {
+        		    document.getElementById("livesearch").innerHTML="";
+        		    document.getElementById("livesearch").style.border="0px";
+        		    return;
+        		  }
+          if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+          } else {  // code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function() {
+            if (this.readyState==4 && this.status==200) {
+              document.getElementById("livesearch").innerHTML=this.responseText;
+              document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+            }
+          }
+          xmlhttp.open("GET","livesearch?q="+str+"&searchtype='all'",true);
+          xmlhttp.send();
+        }
+        </script>
+
 <p class="content">Content:<br/>
 <textarea rows="10" cols="100" style="color:black" id = "contents" form="inboxContents"  name="contents"></textarea>
     </p>
@@ -286,13 +290,13 @@ function showResult(str) {
     <input type="hidden" id="sender_id" name="sender_id" style="disply:none"/>
     <input type="hidden"  id="sender_name" name="sender_name" style="display:none"/>
     <input type="hidden"  id="user_type" name="user_type" style="display:none"/>
-    
-        
+
+
     </form>
     <script>
         document.getElementById("sender_id").value=localStorage.getItem("userID");
         document.getElementById("sender_name").value=localStorage.getItem("name");
-        
+
     function showDate()
 {
 	var now = new Date();
@@ -304,22 +308,22 @@ function showResult(str) {
 	document.getElementById("user_type").value = "venue";
 	}else{
 		document.getElementById("user_type").value = "band";
-		
+
 		}
 	function fourdigits(number)
 	{
 		return (number < 1000) ? number + 1900 : number;
 	}
-	
+
 	tnow=new Date();
 	thour=now.getHours();
 	tmin=now.getMinutes();
 	tsec=now.getSeconds();
-	
+
 	if (tmin<=9) { tmin="0"+tmin; }
 	if (tsec<=9) { tsec="0"+tsec; }
 	if (thour<10) { thour="0"+thour; }
-	
+
 	today = days[now.getDay()] + ", " + date + " " + months[now.getMonth()] + ", " + (fourdigits(now.getYear())) + " - " + thour + ":" + tmin +":"+ tsec;
 	document.getElementById("date").value = today;
 }
