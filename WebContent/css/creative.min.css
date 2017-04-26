@@ -6,6 +6,11 @@ html{
     background-color: black;
     width: auto;
 }
+
+.time1{
+    width: 275px;
+    text-align: center;
+}
 .cont{
     color: black;
     padding: inherit;
