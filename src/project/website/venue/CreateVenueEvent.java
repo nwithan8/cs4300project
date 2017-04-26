@@ -41,7 +41,7 @@ public class CreateVenueEvent extends HttpServlet {
     	cfg.setTemplateExceptionHandler(TemplateExceptionHandler.HTML_DEBUG_HANDLER);
     	
     }
-    public void runTemplate(HttpServletRequest request, HttpServletResponse response) {
+    public void runTemplate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		// You can use this structure for all of your objects to be sent to browser
 		Template template = null;
@@ -69,6 +69,8 @@ public class CreateVenueEvent extends HttpServlet {
 		} catch (TemplateException e) {
 			e.printStackTrace();
 		}*/
+		request.getRequestDispatcher("./CreateVenueEvent.html").forward(request, response);//forwards the request
+
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

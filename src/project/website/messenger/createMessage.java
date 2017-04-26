@@ -69,6 +69,8 @@ public class createMessage extends HttpServlet {
 		
 		DBinteract.createMessage(sender_name, sender_id, recipient_name, recipient_id, title, contents, timesent);
 
+		request.getRequestDispatcher("./Inbox.html").forward(request, response);//forwards the request
+
 	}
 
 	/**

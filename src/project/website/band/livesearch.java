@@ -34,6 +34,7 @@ public class livesearch extends HttpServlet {
 		String searchresultsstuff = null;
 		String search = request.getParameter("q");
 		String searchType = request.getParameter("searchtype");
+		System.out.println("Starting search for query: "+search );
 		if(searchType.equals("all")){
 			Vector<String> searchresults = null;
 			searchType="band";
