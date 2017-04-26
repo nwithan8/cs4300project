@@ -318,15 +318,15 @@ if (typeof(Storage) !== "undefined") {
                               </td>
                          </tr>
                          <tr>
-                              <td>
-                                  <p>Facebook</p>
+                              <td style="color:white">
+                                  <p >Facebook</p>
                               </td>
                               <td>
                                   <input type="url" name="facebook" style="color:white; width:70%; margin-bottom:10px;" required>
                               </td>
                          </tr>
                          <tr>
-                              <td>
+                              <td style="color:white">
                                   <p>Twitter</p>
                               </td>
                               <td>
@@ -335,7 +335,7 @@ if (typeof(Storage) !== "undefined") {
                          </tr>
 
                          <tr>
-                              <td>
+                              <td style="color:white">
                                   <p>YouTube</p>
                               </td>
                               <td>
