@@ -242,7 +242,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <img src="https://placehold.it/600x400" class="center-block img-responsive">
                     <br>
                     <br>
                     <div style="display:none;">
